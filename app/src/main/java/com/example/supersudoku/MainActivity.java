@@ -2,7 +2,6 @@ package com.example.supersudoku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -78,21 +77,108 @@ public class MainActivity extends AppCompatActivity {
         Cell[25] = (TextView)findViewById(R.id.Cell25);
         Cell[26] = (TextView)findViewById(R.id.Cell26);
 
+
+
         //Initialize the game board data
         board = new Board(9, workingBoard, solvedBoard);
+
+        for(int i = 0; i < 27; ++i){
+            Cell[i].setText(Character.toString(board.getSquare(i)));
+        }
 
 
         //setup button listeners
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected())
-                    Cell[cellSelector].setText("1");
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 1);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 2);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 3);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 4);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 5);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 6);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 7);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 8);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
+            }
+        });
+
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Cell[cellSelector].isSelected()) {
+                    board.setSquare(cellSelector, 9);
+                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                }
             }
         });
 
         //Setup Cell listeners
-
         Cell[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
