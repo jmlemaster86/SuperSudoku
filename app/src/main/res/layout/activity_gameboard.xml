@@ -128,327 +128,977 @@
 
     <TextView
         android:id="@+id/Cell0"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(0)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tableLayout"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(1)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell0"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell1"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell3"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell2"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell3"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell5"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell4"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell6"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell5"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell7"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell6"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/Cell8"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell7"
         app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
 
     <TextView
         android:id="@+id/Cell9"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Cell0" />
 
     <TextView
         android:id="@+id/Cell10"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell9"
         app:layout_constraintTop_toBottomOf="@+id/Cell1" />
 
     <TextView
         android:id="@+id/Cell11"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell10"
         app:layout_constraintTop_toBottomOf="@+id/Cell2" />
 
     <TextView
         android:id="@+id/Cell12"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell11"
         app:layout_constraintTop_toBottomOf="@+id/Cell3" />
 
     <TextView
         android:id="@+id/Cell13"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell12"
         app:layout_constraintTop_toBottomOf="@+id/Cell4" />
 
     <TextView
         android:id="@+id/Cell14"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell13"
         app:layout_constraintTop_toBottomOf="@+id/Cell5" />
 
     <TextView
         android:id="@+id/Cell15"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell14"
         app:layout_constraintTop_toBottomOf="@+id/Cell6" />
 
     <TextView
         android:id="@+id/Cell16"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell15"
         app:layout_constraintTop_toBottomOf="@+id/Cell7" />
 
     <TextView
         android:id="@+id/Cell17"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell16"
         app:layout_constraintTop_toBottomOf="@+id/Cell8" />
 
     <TextView
         android:id="@+id/Cell18"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="5"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/Cell9" />
 
     <TextView
         android:id="@+id/Cell19"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(19)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell18"
         app:layout_constraintTop_toBottomOf="@+id/Cell10" />
 
     <TextView
         android:id="@+id/Cell20"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell19"
         app:layout_constraintTop_toBottomOf="@+id/Cell11" />
 
     <TextView
         android:id="@+id/Cell21"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell20"
         app:layout_constraintTop_toBottomOf="@+id/Cell12" />
 
     <TextView
         android:id="@+id/Cell22"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell21"
         app:layout_constraintTop_toBottomOf="@+id/Cell13" />
 
     <TextView
         android:id="@+id/Cell23"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell22"
         app:layout_constraintTop_toBottomOf="@+id/Cell14" />
 
     <TextView
         android:id="@+id/Cell24"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell23"
         app:layout_constraintTop_toBottomOf="@+id/Cell15" />
 
     <TextView
         android:id="@+id/Cell25"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell24"
         app:layout_constraintTop_toBottomOf="@+id/Cell16" />
 
     <TextView
         android:id="@+id/Cell26"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="@{board.getSquare(20)}"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="28sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Cell25"
         app:layout_constraintTop_toBottomOf="@+id/Cell17" />
+
+    <TextView
+        android:id="@+id/Cell27"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell18" />
+
+    <TextView
+        android:id="@+id/Cell28"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell27"
+        app:layout_constraintTop_toBottomOf="@+id/Cell19" />
+
+    <TextView
+        android:id="@+id/Cell29"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell28"
+        app:layout_constraintTop_toBottomOf="@+id/Cell20" />
+
+    <TextView
+        android:id="@+id/Cell30"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell29"
+        app:layout_constraintTop_toBottomOf="@+id/Cell21" />
+
+    <TextView
+        android:id="@+id/Cell31"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell30"
+        app:layout_constraintTop_toBottomOf="@+id/Cell22" />
+
+    <TextView
+        android:id="@+id/Cell32"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell31"
+        app:layout_constraintTop_toBottomOf="@+id/Cell23" />
+
+    <TextView
+        android:id="@+id/Cell33"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell32"
+        app:layout_constraintTop_toBottomOf="@+id/Cell24" />
+
+    <TextView
+        android:id="@+id/Cell34"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell33"
+        app:layout_constraintTop_toBottomOf="@+id/Cell25" />
+
+    <TextView
+        android:id="@+id/Cell35"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell34"
+        app:layout_constraintTop_toBottomOf="@+id/Cell26" />
+
+    <TextView
+        android:id="@+id/Cell36"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell27" />
+
+    <TextView
+        android:id="@+id/Cell37"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell36"
+        app:layout_constraintTop_toBottomOf="@+id/Cell28" />
+
+    <TextView
+        android:id="@+id/Cell38"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell37"
+        app:layout_constraintTop_toBottomOf="@+id/Cell29" />
+
+    <TextView
+        android:id="@+id/Cell39"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell38"
+        app:layout_constraintTop_toBottomOf="@+id/Cell30" />
+
+    <TextView
+        android:id="@+id/Cell40"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell39"
+        app:layout_constraintTop_toBottomOf="@+id/Cell31" />
+
+    <TextView
+        android:id="@+id/Cell41"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell40"
+        app:layout_constraintTop_toBottomOf="@+id/Cell32" />
+
+    <TextView
+        android:id="@+id/Cell42"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell41"
+        app:layout_constraintTop_toBottomOf="@+id/Cell33" />
+
+    <TextView
+        android:id="@+id/Cell43"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell42"
+        app:layout_constraintTop_toBottomOf="@+id/Cell34" />
+
+    <TextView
+        android:id="@+id/Cell44"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@{board.getSquare(19)}"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell43"
+        app:layout_constraintTop_toBottomOf="@+id/Cell35" />
+
+    <TextView
+        android:id="@+id/Cell45"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell36" />
+
+    <TextView
+        android:id="@+id/Cell46"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell45"
+        app:layout_constraintTop_toBottomOf="@+id/Cell37" />
+
+    <TextView
+        android:id="@+id/Cell47"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell46"
+        app:layout_constraintTop_toBottomOf="@+id/Cell38" />
+
+    <TextView
+        android:id="@+id/Cell48"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell47"
+        app:layout_constraintTop_toBottomOf="@+id/Cell39" />
+
+    <TextView
+        android:id="@+id/Cell49"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell48"
+        app:layout_constraintTop_toBottomOf="@+id/Cell40" />
+
+    <TextView
+        android:id="@+id/Cell50"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell49"
+        app:layout_constraintTop_toBottomOf="@+id/Cell41" />
+
+    <TextView
+        android:id="@+id/Cell51"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell50"
+        app:layout_constraintTop_toBottomOf="@+id/Cell42" />
+
+    <TextView
+        android:id="@+id/Cell52"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell51"
+        app:layout_constraintTop_toBottomOf="@+id/Cell43" />
+
+    <TextView
+        android:id="@+id/Cell53"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell52"
+        app:layout_constraintTop_toBottomOf="@+id/Cell44" />
+
+    <TextView
+        android:id="@+id/Cell54"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell45" />
+
+    <TextView
+        android:id="@+id/Cell55"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell54"
+        app:layout_constraintTop_toBottomOf="@+id/Cell46" />
+
+    <TextView
+        android:id="@+id/Cell56"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell55"
+        app:layout_constraintTop_toBottomOf="@+id/Cell47" />
+
+    <TextView
+        android:id="@+id/Cell57"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell56"
+        app:layout_constraintTop_toBottomOf="@+id/Cell48" />
+
+    <TextView
+        android:id="@+id/Cell58"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell57"
+        app:layout_constraintTop_toBottomOf="@+id/Cell49" />
+
+    <TextView
+        android:id="@+id/Cell59"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell58"
+        app:layout_constraintTop_toBottomOf="@+id/Cell50" />
+
+    <TextView
+        android:id="@+id/Cell60"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell59"
+        app:layout_constraintTop_toBottomOf="@+id/Cell51" />
+
+    <TextView
+        android:id="@+id/Cell61"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell60"
+        app:layout_constraintTop_toBottomOf="@+id/Cell52" />
+
+    <TextView
+        android:id="@+id/Cell62"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell61"
+        app:layout_constraintTop_toBottomOf="@+id/Cell53" />
+
+    <TextView
+        android:id="@+id/Cell63"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell54" />
+
+    <TextView
+        android:id="@+id/Cell64"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell63"
+        app:layout_constraintTop_toBottomOf="@+id/Cell55" />
+
+    <TextView
+        android:id="@+id/Cell65"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell64"
+        app:layout_constraintTop_toBottomOf="@+id/Cell56" />
+
+    <TextView
+        android:id="@+id/Cell66"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell65"
+        app:layout_constraintTop_toBottomOf="@+id/Cell57" />
+
+    <TextView
+        android:id="@+id/Cell67"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell66"
+        app:layout_constraintTop_toBottomOf="@+id/Cell58" />
+
+    <TextView
+        android:id="@+id/Cell68"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell67"
+        app:layout_constraintTop_toBottomOf="@+id/Cell59" />
+
+    <TextView
+        android:id="@+id/Cell69"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell68"
+        app:layout_constraintTop_toBottomOf="@+id/Cell60" />
+
+    <TextView
+        android:id="@+id/Cell70"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell69"
+        app:layout_constraintTop_toBottomOf="@+id/Cell61" />
+
+    <TextView
+        android:id="@+id/Cell71"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell70"
+        app:layout_constraintTop_toBottomOf="@+id/Cell62" />
+
+    <TextView
+        android:id="@+id/Cell72"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Cell63" />
+
+    <TextView
+        android:id="@+id/Cell73"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell72"
+        app:layout_constraintTop_toBottomOf="@+id/Cell64" />
+
+    <TextView
+        android:id="@+id/Cell74"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell73"
+        app:layout_constraintTop_toBottomOf="@+id/Cell65" />
+
+    <TextView
+        android:id="@+id/Cell75"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell74"
+        app:layout_constraintTop_toBottomOf="@+id/Cell66" />
+
+    <TextView
+        android:id="@+id/Cell76"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell75"
+        app:layout_constraintTop_toBottomOf="@+id/Cell67" />
+
+    <TextView
+        android:id="@+id/Cell77"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell76"
+        app:layout_constraintTop_toBottomOf="@+id/Cell68" />
+
+    <TextView
+        android:id="@+id/Cell78"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell77"
+        app:layout_constraintTop_toBottomOf="@+id/Cell69" />
+
+    <TextView
+        android:id="@+id/Cell79"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell78"
+        app:layout_constraintTop_toBottomOf="@+id/Cell70" />
+
+    <TextView
+        android:id="@+id/Cell80"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="5"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Cell79"
+        app:layout_constraintTop_toBottomOf="@+id/Cell71" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
