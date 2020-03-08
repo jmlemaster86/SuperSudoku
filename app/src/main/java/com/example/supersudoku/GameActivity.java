@@ -192,6 +192,11 @@ public class GameActivity extends AppCompatActivity {
             Cell[i].setText(Character.toString(board.getSquare(i)));
         }
 
+        //set background colors
+        ClearSelected();
+        ClearSelectedBtn();
+        modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+
 
         //setup button listeners
         modeBtn.setOnClickListener(new View.OnClickListener() {
@@ -220,8 +225,8 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 1);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
-
             }
         });
 
@@ -236,6 +241,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 2);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -251,6 +257,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 3);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -266,6 +273,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 4);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -281,6 +289,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 5);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -296,6 +305,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 6);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -311,6 +321,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 7);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -326,6 +337,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 8);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -341,6 +353,7 @@ public class GameActivity extends AppCompatActivity {
                 else {
                     board.setSquare(cellSelector, 9);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                    CheckConflict(cellSelector);
                 }
             }
         });
@@ -356,6 +369,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(0,buttonSelector);
                     Cell[0].setText(Character.toString(board.getSquare(0)));
+                    CheckConflict(0);
                 }
             }
         });
@@ -370,6 +384,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(1,buttonSelector);
                     Cell[1].setText(Character.toString(board.getSquare(1)));
+                    CheckConflict(1);
                 }
             }
         });
@@ -384,6 +399,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(2,buttonSelector);
                     Cell[2].setText(Character.toString(board.getSquare(2)));
+                    CheckConflict(2);
                 }
             }
         });
@@ -398,6 +414,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(3,buttonSelector);
                     Cell[3].setText(Character.toString(board.getSquare(3)));
+                    CheckConflict(3);
                 }
             }
         });
@@ -412,6 +429,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(4,buttonSelector);
                     Cell[4].setText(Character.toString(board.getSquare(4)));
+                    CheckConflict(4);
                 }
             }
         });
@@ -426,6 +444,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(5,buttonSelector);
                     Cell[5].setText(Character.toString(board.getSquare(5)));
+                    CheckConflict(5);
                 }
             }
         });
@@ -440,6 +459,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(6,buttonSelector);
                     Cell[6].setText(Character.toString(board.getSquare(6)));
+                    CheckConflict(6);
                 }
             }
         });
@@ -454,6 +474,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(7,buttonSelector);
                     Cell[7].setText(Character.toString(board.getSquare(7)));
+                    CheckConflict(7);
                 }
             }
         });
@@ -468,6 +489,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(8,buttonSelector);
                     Cell[8].setText(Character.toString(board.getSquare(8)));
+                    CheckConflict(8);
                 }
             }
         });
@@ -482,6 +504,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(9,buttonSelector);
                     Cell[9].setText(Character.toString(board.getSquare(9)));
+                    CheckConflict(9);
                 }
             }
         });
@@ -496,6 +519,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(10,buttonSelector);
                     Cell[10].setText(Character.toString(board.getSquare(10)));
+                    CheckConflict(10);
                 }
             }
         });
@@ -510,6 +534,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(11,buttonSelector);
                     Cell[11].setText(Character.toString(board.getSquare(11)));
+                    CheckConflict(11);
                 }
             }
         });
@@ -524,6 +549,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(12,buttonSelector);
                     Cell[12].setText(Character.toString(board.getSquare(12)));
+                    CheckConflict(12);
                 }
             }
         });
@@ -538,6 +564,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(13,buttonSelector);
                     Cell[13].setText(Character.toString(board.getSquare(13)));
+                    CheckConflict(13);
                 }
             }
         });
@@ -552,6 +579,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(14,buttonSelector);
                     Cell[14].setText(Character.toString(board.getSquare(14)));
+                    CheckConflict(14);
                 }
             }
         });
@@ -566,6 +594,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(15,buttonSelector);
                     Cell[15].setText(Character.toString(board.getSquare(15)));
+                    CheckConflict(15);
                 }
             }
         });
@@ -580,6 +609,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(16,buttonSelector);
                     Cell[16].setText(Character.toString(board.getSquare(16)));
+                    CheckConflict(16);
                 }
             }
         });
@@ -594,6 +624,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(17,buttonSelector);
                     Cell[17].setText(Character.toString(board.getSquare(17)));
+                    CheckConflict(17);
                 }
             }
         });
@@ -608,6 +639,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(18,buttonSelector);
                     Cell[18].setText(Character.toString(board.getSquare(18)));
+                    CheckConflict(18);
                 }
             }
         });
@@ -622,6 +654,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(19,buttonSelector);
                     Cell[19].setText(Character.toString(board.getSquare(19)));
+                    CheckConflict(19);
                 }
             }
         });
@@ -636,6 +669,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(20,buttonSelector);
                     Cell[20].setText(Character.toString(board.getSquare(20)));
+                    CheckConflict(20);
                 }
             }
         });
@@ -650,6 +684,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(21,buttonSelector);
                     Cell[21].setText(Character.toString(board.getSquare(21)));
+                    CheckConflict(21);
                 }
             }
         });
@@ -664,6 +699,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(22,buttonSelector);
                     Cell[22].setText(Character.toString(board.getSquare(22)));
+                    CheckConflict(22);
                 }
             }
         });
@@ -678,6 +714,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(23,buttonSelector);
                     Cell[23].setText(Character.toString(board.getSquare(23)));
+                    CheckConflict(23);
                 }
             }
         });
@@ -692,6 +729,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(24,buttonSelector);
                     Cell[24].setText(Character.toString(board.getSquare(24)));
+                    CheckConflict(24);
                 }
             }
         });
@@ -706,6 +744,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(25,buttonSelector);
                     Cell[25].setText(Character.toString(board.getSquare(25)));
+                    CheckConflict(25);
                 }
             }
         });
@@ -720,6 +759,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(26,buttonSelector);
                     Cell[26].setText(Character.toString(board.getSquare(26)));
+                    CheckConflict(26);
                 }
             }
         });
@@ -734,6 +774,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(27,buttonSelector);
                     Cell[27].setText(Character.toString(board.getSquare(27)));
+                    CheckConflict(27);
                 }
             }
         });
@@ -748,6 +789,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(28,buttonSelector);
                     Cell[28].setText(Character.toString(board.getSquare(28)));
+                    CheckConflict(28);
                 }
             }
         });
@@ -762,6 +804,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(29,buttonSelector);
                     Cell[29].setText(Character.toString(board.getSquare(29)));
+                    CheckConflict(29);
                 }
             }
         });
@@ -776,6 +819,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(30,buttonSelector);
                     Cell[30].setText(Character.toString(board.getSquare(30)));
+                    CheckConflict(30);
                 }
             }
         });
@@ -790,6 +834,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(31,buttonSelector);
                     Cell[31].setText(Character.toString(board.getSquare(31)));
+                    CheckConflict(31);
                 }
             }
         });
@@ -804,6 +849,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(32,buttonSelector);
                     Cell[32].setText(Character.toString(board.getSquare(32)));
+                    CheckConflict(32);
                 }
             }
         });
@@ -818,6 +864,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(33,buttonSelector);
                     Cell[33].setText(Character.toString(board.getSquare(33)));
+                    CheckConflict(33);
                 }
             }
         });
@@ -832,6 +879,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(34,buttonSelector);
                     Cell[34].setText(Character.toString(board.getSquare(34)));
+                    CheckConflict(34);
                 }
             }
         });
@@ -846,6 +894,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(35,buttonSelector);
                     Cell[35].setText(Character.toString(board.getSquare(35)));
+                    CheckConflict(35);
                 }
             }
         });
@@ -860,6 +909,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(36,buttonSelector);
                     Cell[36].setText(Character.toString(board.getSquare(36)));
+                    CheckConflict(36);
                 }
             }
         });
@@ -874,6 +924,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(37,buttonSelector);
                     Cell[37].setText(Character.toString(board.getSquare(37)));
+                    CheckConflict(37);
                 }
             }
         });
@@ -888,6 +939,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(38,buttonSelector);
                     Cell[38].setText(Character.toString(board.getSquare(38)));
+                    CheckConflict(38);
                 }
             }
         });
@@ -902,6 +954,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(39,buttonSelector);
                     Cell[39].setText(Character.toString(board.getSquare(39)));
+                    CheckConflict(39);
                 }
             }
         });
@@ -916,6 +969,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(40,buttonSelector);
                     Cell[40].setText(Character.toString(board.getSquare(40)));
+                    CheckConflict(40);
                 }
             }
         });
@@ -930,6 +984,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(41,buttonSelector);
                     Cell[41].setText(Character.toString(board.getSquare(41)));
+                    CheckConflict(41);
                 }
             }
         });
@@ -944,6 +999,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(42,buttonSelector);
                     Cell[42].setText(Character.toString(board.getSquare(42)));
+                    CheckConflict(42);
                 }
             }
         });
@@ -958,6 +1014,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(43,buttonSelector);
                     Cell[43].setText(Character.toString(board.getSquare(43)));
+                    CheckConflict(43);
                 }
             }
         });
@@ -972,6 +1029,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(44,buttonSelector);
                     Cell[44].setText(Character.toString(board.getSquare(44)));
+                    CheckConflict(44);
                 }
             }
         });
@@ -986,6 +1044,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(45,buttonSelector);
                     Cell[45].setText(Character.toString(board.getSquare(45)));
+                    CheckConflict(45);
                 }
             }
         });
@@ -1000,6 +1059,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(46,buttonSelector);
                     Cell[46].setText(Character.toString(board.getSquare(46)));
+                    CheckConflict(46);
                 }
             }
         });
@@ -1014,6 +1074,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(47,buttonSelector);
                     Cell[47].setText(Character.toString(board.getSquare(47)));
+                    CheckConflict(47);
                 }
             }
         });
@@ -1028,6 +1089,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(48,buttonSelector);
                     Cell[48].setText(Character.toString(board.getSquare(48)));
+                    CheckConflict(48);
                 }
             }
         });
@@ -1042,6 +1104,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(49,buttonSelector);
                     Cell[49].setText(Character.toString(board.getSquare(49)));
+                    CheckConflict(49);
                 }
             }
         });
@@ -1056,6 +1119,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(50,buttonSelector);
                     Cell[50].setText(Character.toString(board.getSquare(50)));
+                    CheckConflict(50);
                 }
             }
         });
@@ -1070,6 +1134,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(51,buttonSelector);
                     Cell[51].setText(Character.toString(board.getSquare(51)));
+                    CheckConflict(51);
                 }
             }
         });
@@ -1084,6 +1149,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(52,buttonSelector);
                     Cell[52].setText(Character.toString(board.getSquare(52)));
+                    CheckConflict(52);
                 }
             }
         });
@@ -1098,6 +1164,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(53,buttonSelector);
                     Cell[53].setText(Character.toString(board.getSquare(53)));
+                    CheckConflict(53);
                 }
             }
         });
@@ -1112,6 +1179,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(54,buttonSelector);
                     Cell[54].setText(Character.toString(board.getSquare(54)));
+                    CheckConflict(54);
                 }
             }
         });
@@ -1126,6 +1194,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(55,buttonSelector);
                     Cell[55].setText(Character.toString(board.getSquare(55)));
+                    CheckConflict(55);
                 }
             }
         });
@@ -1140,6 +1209,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(56,buttonSelector);
                     Cell[56].setText(Character.toString(board.getSquare(56)));
+                    CheckConflict(56);
                 }
             }
         });
@@ -1154,6 +1224,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(57,buttonSelector);
                     Cell[57].setText(Character.toString(board.getSquare(57)));
+                    CheckConflict(57);
                 }
             }
         });
@@ -1168,6 +1239,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(58,buttonSelector);
                     Cell[58].setText(Character.toString(board.getSquare(58)));
+                    CheckConflict(58);
                 }
             }
         });
@@ -1182,6 +1254,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(59,buttonSelector);
                     Cell[59].setText(Character.toString(board.getSquare(59)));
+                    CheckConflict(59);
                 }
             }
         });
@@ -1196,6 +1269,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(60,buttonSelector);
                     Cell[60].setText(Character.toString(board.getSquare(60)));
+                    CheckConflict(60);
                 }
             }
         });
@@ -1210,6 +1284,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(61,buttonSelector);
                     Cell[61].setText(Character.toString(board.getSquare(61)));
+                    CheckConflict(61);
                 }
             }
         });
@@ -1224,6 +1299,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(62,buttonSelector);
                     Cell[62].setText(Character.toString(board.getSquare(62)));
+                    CheckConflict(62);
                 }
             }
         });
@@ -1238,6 +1314,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(63,buttonSelector);
                     Cell[63].setText(Character.toString(board.getSquare(63)));
+                    CheckConflict(63);
                 }
             }
         });
@@ -1252,6 +1329,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(64,buttonSelector);
                     Cell[64].setText(Character.toString(board.getSquare(64)));
+                    CheckConflict(64);
                 }
             }
         });
@@ -1266,6 +1344,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(65,buttonSelector);
                     Cell[65].setText(Character.toString(board.getSquare(65)));
+                    CheckConflict(65);
                 }
             }
         });
@@ -1280,6 +1359,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(66,buttonSelector);
                     Cell[66].setText(Character.toString(board.getSquare(66)));
+                    CheckConflict(66);
                 }
             }
         });
@@ -1294,6 +1374,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(67,buttonSelector);
                     Cell[67].setText(Character.toString(board.getSquare(67)));
+                    CheckConflict(67);
                 }
             }
         });
@@ -1308,6 +1389,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(68,buttonSelector);
                     Cell[68].setText(Character.toString(board.getSquare(68)));
+                    CheckConflict(68);
                 }
             }
         });
@@ -1322,6 +1404,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(69,buttonSelector);
                     Cell[69].setText(Character.toString(board.getSquare(69)));
+                    CheckConflict(69);
                 }
             }
         });
@@ -1336,6 +1419,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(70,buttonSelector);
                     Cell[70].setText(Character.toString(board.getSquare(70)));
+                    CheckConflict(70);
                 }
             }
         });
@@ -1350,6 +1434,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(71,buttonSelector);
                     Cell[71].setText(Character.toString(board.getSquare(71)));
+                    CheckConflict(71);
                 }
             }
         });
@@ -1364,6 +1449,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(72,buttonSelector);
                     Cell[72].setText(Character.toString(board.getSquare(72)));
+                    CheckConflict(72);
                 }
             }
         });
@@ -1378,6 +1464,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(73,buttonSelector);
                     Cell[73].setText(Character.toString(board.getSquare(73)));
+                    CheckConflict(73);
                 }
             }
         });
@@ -1392,6 +1479,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(74,buttonSelector);
                     Cell[74].setText(Character.toString(board.getSquare(74)));
+                    CheckConflict(74);
                 }
             }
         });
@@ -1406,6 +1494,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(75,buttonSelector);
                     Cell[75].setText(Character.toString(board.getSquare(75)));
+                    CheckConflict(75);
                 }
             }
         });
@@ -1420,6 +1509,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(76,buttonSelector);
                     Cell[76].setText(Character.toString(board.getSquare(76)));
+                    CheckConflict(76);
                 }
             }
         });
@@ -1434,6 +1524,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(77,buttonSelector);
                     Cell[77].setText(Character.toString(board.getSquare(77)));
+                    CheckConflict(77);
                 }
             }
         });
@@ -1448,6 +1539,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(78,buttonSelector);
                     Cell[78].setText(Character.toString(board.getSquare(78)));
+                    CheckConflict(78);
                 }
             }
         });
@@ -1462,6 +1554,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(79,buttonSelector);
                     Cell[79].setText(Character.toString(board.getSquare(79)));
+                    CheckConflict(79);
                 }
             }
         });
@@ -1476,6 +1569,7 @@ public class GameActivity extends AppCompatActivity {
                 if(inputMode){
                     board.setSquare(80,buttonSelector);
                     Cell[80].setText(Character.toString(board.getSquare(80)));
+                    CheckConflict(80);
                 }
             }
         });
@@ -1502,7 +1596,32 @@ public class GameActivity extends AppCompatActivity {
         btn9.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
     }
 
+    public void CheckConflict(int index){
+        ClearSelected();
+        if(board.rowConflict(index)){
+            int row = index / 9;
+            for(int i = 0; i < 9; ++i){
+                Cell[row * 9 + i].setBackgroundColor(getResources().getColor(R.color.colorConflict));
+            }
+        }
+        if(board.colConflict(index)){
+            int col = index % 9;
+            for(int i = 0; i < 9; ++i){
+                Cell[col + (i * 9)].setBackgroundColor(getResources().getColor(R.color.colorConflict));
+            }
 
+        }
+        if(board.quadConflict(index)){
+            int rowQuad = (index / 9) / 3;
+            int colQuad = (index % 9) / 3;
+            int dest = colQuad * 3 + (9 * (rowQuad * 3));
+            for(int i = 0; i < 3; ++i){
+                for(int j = 0; j < 3; ++j){
+                    Cell[dest + j + (9 * i)].setBackgroundColor(getResources().getColor(R.color.colorConflict));
+                }
+            }
+        }
+    }
 
 
 }

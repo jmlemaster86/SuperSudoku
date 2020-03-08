@@ -7,4 +7,5 @@
     <color name="colorSecBack">#ccccee</color>
     <color name="colorBtnOn">#aaaaaa</color>
     <color name="colorBtnOff">#cccccc</color>
+    <color name="colorConflict">#eecccc</color>
 </resources>

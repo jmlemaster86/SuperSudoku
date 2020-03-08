@@ -56,6 +56,14 @@ class Board{
 		else
 			return (char)(result + 48);
 	}
+
+	//internal getter for a cell's numerical value
+	private int getValue(int index){
+		if(workingBoard[index].getActual() <= -1)
+			return solvedBoard[index];
+		else
+			return workingBoard[index].getActual();
+	}
 	
 	//method to set the value of a cell.
 	public void setSquare(int index, int value){
@@ -64,7 +72,7 @@ class Board{
 	}
 	
 	//Work in progress! Code to check if a particular cell's value is valid
-	public boolean isValid(int index){  
+	public boolean isValid(int index){
 		int row = index / size;
 		int column = index % size;
 		int value;
@@ -82,6 +90,43 @@ class Board{
 		}
 		return false;
 	}
-	
+
+	//detects row conflicts, true if a conflict exist false if not
+	public boolean rowConflict(int index){
+		int row = index / size;
+		for(int i = 0; i < size; ++i){
+			int checkIndex = row * size + i;
+			if(checkIndex == index);
+			else if(getValue(checkIndex) == getValue(index))
+				return true;
+		}
+		return false;
+	}
+
+	//false if no conflict exist
+	public boolean colConflict(int index){
+		int col = index % size;
+		for(int i = 0; i < size; ++i){
+			int checkIndex = col + (size * i);
+			if(checkIndex == index);
+			else if(getValue(checkIndex) == getValue(index))
+				return true;
+		}
+		return false;
+	}
+
+	public boolean quadConflict(int index){
+		int colQuad = (int)((index % 9) / 3);
+		int rowQuad = (int)((int)(index / 9) / 3);
+		int checkIndex = colQuad * 3 + (9 * (rowQuad * 3));
+		for(int i = 0; i < 3; ++i){
+			for(int j = 0; j < 3; ++j){
+				if(checkIndex + j +(9*i) == index);
+				else if(getValue(checkIndex + j + (9 * i)) == getValue(index))
+					return true;
+			}
+		}
+		return false;
+	}
 }
 
