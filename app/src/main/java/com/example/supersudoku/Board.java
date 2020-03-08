@@ -37,9 +37,10 @@ class Board{
 	//loops through to check if the board is solved
 	public boolean isSolved(){
 		for(int i = 0; i < (size * size); ++i){
-			if(this.getSquare(i) != solvedBoard[i]){
-				return false;
-			}
+			if(workingBoard[i].getActual() == -1)
+			    continue;
+			if(workingBoard[i].getActual() != solvedBoard[i])
+			    return false;
 		}
 		return true;
 	}
@@ -66,7 +67,11 @@ class Board{
 	public boolean isValid(int index){  
 		int row = index / size;
 		int column = index % size;
-		int value = this.getSquare(index);
+		int value;
+		if(workingBoard[index].getActual() <= -1)
+		    value = solvedBoard[index];
+		else
+		    value = workingBoard[index].getActual();
 		for(int i = 0; i < size; ++i){
 			int checkIndex = row * size + i;
 			if(checkIndex == index);
