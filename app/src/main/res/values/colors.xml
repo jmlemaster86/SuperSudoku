@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorPrimBack">#eeeeee</color>
     <color name="colorSecBack">#ccccee</color>
+    <color name="colorBtnOn">#aaaaaa</color>
+    <color name="colorBtnOff">#cccccc</color>
 </resources>

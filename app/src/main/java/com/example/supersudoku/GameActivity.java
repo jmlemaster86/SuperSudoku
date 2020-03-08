@@ -8,9 +8,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameActivity extends AppCompatActivity {
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, modeBtn;
     TextView[] Cell;
     int cellSelector;
+    int buttonSelector;
+    boolean inputMode;
     //board 33 from book
     int[] workingBoard = {0, 0, -1, 0, -1, 0, -1, 0, -1,
             0, 0, -1, 0, -1, -1, -1, -1, 0,
@@ -81,7 +83,10 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameboard);
+
         cellSelector = -1;
+        buttonSelector = 0;
+        inputMode = false;
         //Initialize all buttons
         btn1 = (Button)findViewById(R.id.keypad1);
         btn2 = (Button)findViewById(R.id.keypad2);
@@ -92,6 +97,7 @@ public class GameActivity extends AppCompatActivity {
         btn7 = (Button)findViewById(R.id.keypad7);
         btn8 = (Button)findViewById(R.id.keypad8);
         btn9 = (Button)findViewById(R.id.keypad9);
+        modeBtn = (Button)findViewById(R.id.keypadmodebutton);
 
         //Initialize all Cells (so far)
         Cell = new TextView[81];
@@ -188,20 +194,46 @@ public class GameActivity extends AppCompatActivity {
 
 
         //setup button listeners
+        modeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClearSelectedBtn();
+                if(inputMode) {
+                    modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+                    inputMode = false;
+                }
+                else {
+                    modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                    inputMode = true;
+                }
+            }
+        });
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 1;
+                    btn1.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 1);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
+
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 2;
+                    btn2.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 2);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -211,7 +243,12 @@ public class GameActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 3;
+                    btn3.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 3);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -221,7 +258,12 @@ public class GameActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 4;
+                    btn4.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 4);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -231,7 +273,12 @@ public class GameActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 5;
+                    btn5.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 5);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -241,7 +288,12 @@ public class GameActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 6;
+                    btn6.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 6);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -251,7 +303,12 @@ public class GameActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 7;
+                    btn7.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 7);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -261,7 +318,12 @@ public class GameActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 8;
+                    btn8.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 8);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -271,7 +333,12 @@ public class GameActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Cell[cellSelector].isSelected()) {
+                ClearSelectedBtn();
+                if(inputMode){
+                    buttonSelector = 9;
+                    btn9.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                }
+                else {
                     board.setSquare(cellSelector, 9);
                     Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
                 }
@@ -286,6 +353,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[0].setSelected(true);
                 Cell[0].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 0;
+                if(inputMode){
+                    board.setSquare(0,buttonSelector);
+                    Cell[0].setText(Character.toString(board.getSquare(0)));
+                }
             }
         });
 
@@ -296,6 +367,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[1].setSelected(true);
                 Cell[1].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 1;
+                if(inputMode){
+                    board.setSquare(1,buttonSelector);
+                    Cell[1].setText(Character.toString(board.getSquare(1)));
+                }
             }
         });
 
@@ -306,6 +381,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[2].setSelected(true);
                 Cell[2].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 2;
+                if(inputMode){
+                    board.setSquare(2,buttonSelector);
+                    Cell[2].setText(Character.toString(board.getSquare(2)));
+                }
             }
         });
 
@@ -316,6 +395,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[3].setSelected(true);
                 Cell[3].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 3;
+                if(inputMode){
+                    board.setSquare(3,buttonSelector);
+                    Cell[3].setText(Character.toString(board.getSquare(3)));
+                }
             }
         });
 
@@ -326,6 +409,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[4].setSelected(true);
                 Cell[4].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 4;
+                if(inputMode){
+                    board.setSquare(4,buttonSelector);
+                    Cell[4].setText(Character.toString(board.getSquare(4)));
+                }
             }
         });
 
@@ -336,6 +423,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[5].setSelected(true);
                 Cell[5].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 5;
+                if(inputMode){
+                    board.setSquare(5,buttonSelector);
+                    Cell[5].setText(Character.toString(board.getSquare(5)));
+                }
             }
         });
 
@@ -346,6 +437,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[6].setSelected(true);
                 Cell[6].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 6;
+                if(inputMode){
+                    board.setSquare(6,buttonSelector);
+                    Cell[6].setText(Character.toString(board.getSquare(6)));
+                }
             }
         });
 
@@ -356,6 +451,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[7].setSelected(true);
                 Cell[7].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 7;
+                if(inputMode){
+                    board.setSquare(7,buttonSelector);
+                    Cell[7].setText(Character.toString(board.getSquare(7)));
+                }
             }
         });
 
@@ -366,6 +465,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[8].setSelected(true);
                 Cell[8].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 8;
+                if(inputMode){
+                    board.setSquare(8,buttonSelector);
+                    Cell[8].setText(Character.toString(board.getSquare(8)));
+                }
             }
         });
 
@@ -376,6 +479,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[9].setSelected(true);
                 Cell[9].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 9;
+                if(inputMode){
+                    board.setSquare(9,buttonSelector);
+                    Cell[9].setText(Character.toString(board.getSquare(9)));
+                }
             }
         });
 
@@ -386,6 +493,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[10].setSelected(true);
                 Cell[10].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 10;
+                if(inputMode){
+                    board.setSquare(10,buttonSelector);
+                    Cell[10].setText(Character.toString(board.getSquare(10)));
+                }
             }
         });
 
@@ -396,6 +507,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[11].setSelected(true);
                 Cell[11].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 11;
+                if(inputMode){
+                    board.setSquare(11,buttonSelector);
+                    Cell[11].setText(Character.toString(board.getSquare(11)));
+                }
             }
         });
 
@@ -406,6 +521,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[12].setSelected(true);
                 Cell[12].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 12;
+                if(inputMode){
+                    board.setSquare(12,buttonSelector);
+                    Cell[12].setText(Character.toString(board.getSquare(12)));
+                }
             }
         });
 
@@ -416,6 +535,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[13].setSelected(true);
                 Cell[13].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 13;
+                if(inputMode){
+                    board.setSquare(13,buttonSelector);
+                    Cell[13].setText(Character.toString(board.getSquare(13)));
+                }
             }
         });
 
@@ -426,6 +549,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[14].setSelected(true);
                 Cell[14].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 14;
+                if(inputMode){
+                    board.setSquare(14,buttonSelector);
+                    Cell[14].setText(Character.toString(board.getSquare(14)));
+                }
             }
         });
 
@@ -436,6 +563,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[15].setSelected(true);
                 Cell[15].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 15;
+                if(inputMode){
+                    board.setSquare(15,buttonSelector);
+                    Cell[15].setText(Character.toString(board.getSquare(15)));
+                }
             }
         });
 
@@ -446,6 +577,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[16].setSelected(true);
                 Cell[16].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 16;
+                if(inputMode){
+                    board.setSquare(16,buttonSelector);
+                    Cell[16].setText(Character.toString(board.getSquare(16)));
+                }
             }
         });
 
@@ -456,6 +591,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[17].setSelected(true);
                 Cell[17].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 17;
+                if(inputMode){
+                    board.setSquare(17,buttonSelector);
+                    Cell[17].setText(Character.toString(board.getSquare(17)));
+                }
             }
         });
 
@@ -466,6 +605,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[18].setSelected(true);
                 Cell[18].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 18;
+                if(inputMode){
+                    board.setSquare(18,buttonSelector);
+                    Cell[18].setText(Character.toString(board.getSquare(18)));
+                }
             }
         });
 
@@ -476,6 +619,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[19].setSelected(true);
                 Cell[19].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 19;
+                if(inputMode){
+                    board.setSquare(19,buttonSelector);
+                    Cell[19].setText(Character.toString(board.getSquare(19)));
+                }
             }
         });
 
@@ -486,6 +633,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[20].setSelected(true);
                 Cell[20].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 20;
+                if(inputMode){
+                    board.setSquare(20,buttonSelector);
+                    Cell[20].setText(Character.toString(board.getSquare(20)));
+                }
             }
         });
 
@@ -496,6 +647,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[21].setSelected(true);
                 Cell[21].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 21;
+                if(inputMode){
+                    board.setSquare(21,buttonSelector);
+                    Cell[21].setText(Character.toString(board.getSquare(21)));
+                }
             }
         });
 
@@ -506,6 +661,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[22].setSelected(true);
                 Cell[22].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 22;
+                if(inputMode){
+                    board.setSquare(22,buttonSelector);
+                    Cell[22].setText(Character.toString(board.getSquare(22)));
+                }
             }
         });
 
@@ -516,6 +675,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[23].setSelected(true);
                 Cell[23].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 23;
+                if(inputMode){
+                    board.setSquare(23,buttonSelector);
+                    Cell[23].setText(Character.toString(board.getSquare(23)));
+                }
             }
         });
 
@@ -526,6 +689,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[24].setSelected(true);
                 Cell[24].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 24;
+                if(inputMode){
+                    board.setSquare(24,buttonSelector);
+                    Cell[24].setText(Character.toString(board.getSquare(24)));
+                }
             }
         });
 
@@ -536,6 +703,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[25].setSelected(true);
                 Cell[25].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 25;
+                if(inputMode){
+                    board.setSquare(25,buttonSelector);
+                    Cell[25].setText(Character.toString(board.getSquare(25)));
+                }
             }
         });
 
@@ -546,6 +717,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[26].setSelected(true);
                 Cell[26].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 26;
+                if(inputMode){
+                    board.setSquare(26,buttonSelector);
+                    Cell[26].setText(Character.toString(board.getSquare(26)));
+                }
             }
         });
 
@@ -556,6 +731,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[27].setSelected(true);
                 Cell[27].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 27;
+                if(inputMode){
+                    board.setSquare(27,buttonSelector);
+                    Cell[27].setText(Character.toString(board.getSquare(27)));
+                }
             }
         });
 
@@ -566,6 +745,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[28].setSelected(true);
                 Cell[28].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 28;
+                if(inputMode){
+                    board.setSquare(28,buttonSelector);
+                    Cell[28].setText(Character.toString(board.getSquare(28)));
+                }
             }
         });
 
@@ -576,6 +759,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[29].setSelected(true);
                 Cell[29].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 29;
+                if(inputMode){
+                    board.setSquare(29,buttonSelector);
+                    Cell[29].setText(Character.toString(board.getSquare(29)));
+                }
             }
         });
 
@@ -586,6 +773,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[30].setSelected(true);
                 Cell[30].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 30;
+                if(inputMode){
+                    board.setSquare(30,buttonSelector);
+                    Cell[30].setText(Character.toString(board.getSquare(30)));
+                }
             }
         });
 
@@ -596,6 +787,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[31].setSelected(true);
                 Cell[31].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 31;
+                if(inputMode){
+                    board.setSquare(31,buttonSelector);
+                    Cell[31].setText(Character.toString(board.getSquare(31)));
+                }
             }
         });
 
@@ -606,6 +801,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[32].setSelected(true);
                 Cell[32].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 32;
+                if(inputMode){
+                    board.setSquare(32,buttonSelector);
+                    Cell[32].setText(Character.toString(board.getSquare(32)));
+                }
             }
         });
 
@@ -616,6 +815,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[33].setSelected(true);
                 Cell[33].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 33;
+                if(inputMode){
+                    board.setSquare(33,buttonSelector);
+                    Cell[33].setText(Character.toString(board.getSquare(33)));
+                }
             }
         });
 
@@ -626,6 +829,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[34].setSelected(true);
                 Cell[34].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 34;
+                if(inputMode){
+                    board.setSquare(34,buttonSelector);
+                    Cell[34].setText(Character.toString(board.getSquare(34)));
+                }
             }
         });
 
@@ -636,6 +843,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[35].setSelected(true);
                 Cell[35].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 35;
+                if(inputMode){
+                    board.setSquare(35,buttonSelector);
+                    Cell[35].setText(Character.toString(board.getSquare(35)));
+                }
             }
         });
 
@@ -646,6 +857,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[36].setSelected(true);
                 Cell[36].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 36;
+                if(inputMode){
+                    board.setSquare(36,buttonSelector);
+                    Cell[36].setText(Character.toString(board.getSquare(36)));
+                }
             }
         });
 
@@ -656,6 +871,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[37].setSelected(true);
                 Cell[37].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 37;
+                if(inputMode){
+                    board.setSquare(37,buttonSelector);
+                    Cell[37].setText(Character.toString(board.getSquare(37)));
+                }
             }
         });
 
@@ -666,6 +885,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[38].setSelected(true);
                 Cell[38].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 38;
+                if(inputMode){
+                    board.setSquare(38,buttonSelector);
+                    Cell[38].setText(Character.toString(board.getSquare(38)));
+                }
             }
         });
 
@@ -676,6 +899,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[39].setSelected(true);
                 Cell[39].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 39;
+                if(inputMode){
+                    board.setSquare(39,buttonSelector);
+                    Cell[39].setText(Character.toString(board.getSquare(39)));
+                }
             }
         });
 
@@ -686,6 +913,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[40].setSelected(true);
                 Cell[40].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 40;
+                if(inputMode){
+                    board.setSquare(40,buttonSelector);
+                    Cell[40].setText(Character.toString(board.getSquare(40)));
+                }
             }
         });
 
@@ -696,6 +927,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[41].setSelected(true);
                 Cell[41].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 41;
+                if(inputMode){
+                    board.setSquare(41,buttonSelector);
+                    Cell[41].setText(Character.toString(board.getSquare(41)));
+                }
             }
         });
 
@@ -706,6 +941,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[42].setSelected(true);
                 Cell[42].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 42;
+                if(inputMode){
+                    board.setSquare(42,buttonSelector);
+                    Cell[42].setText(Character.toString(board.getSquare(42)));
+                }
             }
         });
 
@@ -716,6 +955,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[43].setSelected(true);
                 Cell[43].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 43;
+                if(inputMode){
+                    board.setSquare(43,buttonSelector);
+                    Cell[43].setText(Character.toString(board.getSquare(43)));
+                }
             }
         });
 
@@ -726,6 +969,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[44].setSelected(true);
                 Cell[44].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 44;
+                if(inputMode){
+                    board.setSquare(44,buttonSelector);
+                    Cell[44].setText(Character.toString(board.getSquare(44)));
+                }
             }
         });
 
@@ -736,6 +983,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[45].setSelected(true);
                 Cell[45].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 45;
+                if(inputMode){
+                    board.setSquare(45,buttonSelector);
+                    Cell[45].setText(Character.toString(board.getSquare(45)));
+                }
             }
         });
 
@@ -746,6 +997,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[46].setSelected(true);
                 Cell[46].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 46;
+                if(inputMode){
+                    board.setSquare(46,buttonSelector);
+                    Cell[46].setText(Character.toString(board.getSquare(46)));
+                }
             }
         });
 
@@ -756,6 +1011,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[47].setSelected(true);
                 Cell[47].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 47;
+                if(inputMode){
+                    board.setSquare(47,buttonSelector);
+                    Cell[47].setText(Character.toString(board.getSquare(47)));
+                }
             }
         });
 
@@ -766,6 +1025,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[48].setSelected(true);
                 Cell[48].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 48;
+                if(inputMode){
+                    board.setSquare(48,buttonSelector);
+                    Cell[48].setText(Character.toString(board.getSquare(48)));
+                }
             }
         });
 
@@ -776,6 +1039,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[49].setSelected(true);
                 Cell[49].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 49;
+                if(inputMode){
+                    board.setSquare(49,buttonSelector);
+                    Cell[49].setText(Character.toString(board.getSquare(49)));
+                }
             }
         });
 
@@ -786,6 +1053,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[50].setSelected(true);
                 Cell[50].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 50;
+                if(inputMode){
+                    board.setSquare(50,buttonSelector);
+                    Cell[50].setText(Character.toString(board.getSquare(50)));
+                }
             }
         });
 
@@ -796,6 +1067,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[51].setSelected(true);
                 Cell[51].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 51;
+                if(inputMode){
+                    board.setSquare(51,buttonSelector);
+                    Cell[51].setText(Character.toString(board.getSquare(51)));
+                }
             }
         });
 
@@ -806,6 +1081,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[52].setSelected(true);
                 Cell[52].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 52;
+                if(inputMode){
+                    board.setSquare(52,buttonSelector);
+                    Cell[52].setText(Character.toString(board.getSquare(52)));
+                }
             }
         });
 
@@ -816,6 +1095,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[53].setSelected(true);
                 Cell[53].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 53;
+                if(inputMode){
+                    board.setSquare(53,buttonSelector);
+                    Cell[53].setText(Character.toString(board.getSquare(53)));
+                }
             }
         });
 
@@ -826,6 +1109,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[54].setSelected(true);
                 Cell[54].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 54;
+                if(inputMode){
+                    board.setSquare(54,buttonSelector);
+                    Cell[54].setText(Character.toString(board.getSquare(54)));
+                }
             }
         });
 
@@ -836,6 +1123,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[55].setSelected(true);
                 Cell[55].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 55;
+                if(inputMode){
+                    board.setSquare(55,buttonSelector);
+                    Cell[55].setText(Character.toString(board.getSquare(55)));
+                }
             }
         });
 
@@ -846,6 +1137,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[56].setSelected(true);
                 Cell[56].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 56;
+                if(inputMode){
+                    board.setSquare(56,buttonSelector);
+                    Cell[56].setText(Character.toString(board.getSquare(56)));
+                }
             }
         });
 
@@ -856,6 +1151,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[57].setSelected(true);
                 Cell[57].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 57;
+                if(inputMode){
+                    board.setSquare(57,buttonSelector);
+                    Cell[57].setText(Character.toString(board.getSquare(57)));
+                }
             }
         });
 
@@ -866,6 +1165,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[58].setSelected(true);
                 Cell[58].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 58;
+                if(inputMode){
+                    board.setSquare(58,buttonSelector);
+                    Cell[58].setText(Character.toString(board.getSquare(58)));
+                }
             }
         });
 
@@ -876,6 +1179,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[59].setSelected(true);
                 Cell[59].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 59;
+                if(inputMode){
+                    board.setSquare(59,buttonSelector);
+                    Cell[59].setText(Character.toString(board.getSquare(59)));
+                }
             }
         });
 
@@ -886,6 +1193,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[60].setSelected(true);
                 Cell[60].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 60;
+                if(inputMode){
+                    board.setSquare(60,buttonSelector);
+                    Cell[60].setText(Character.toString(board.getSquare(60)));
+                }
             }
         });
 
@@ -896,6 +1207,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[61].setSelected(true);
                 Cell[61].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 61;
+                if(inputMode){
+                    board.setSquare(61,buttonSelector);
+                    Cell[61].setText(Character.toString(board.getSquare(61)));
+                }
             }
         });
 
@@ -906,6 +1221,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[62].setSelected(true);
                 Cell[62].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 62;
+                if(inputMode){
+                    board.setSquare(62,buttonSelector);
+                    Cell[62].setText(Character.toString(board.getSquare(62)));
+                }
             }
         });
 
@@ -916,6 +1235,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[63].setSelected(true);
                 Cell[63].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 63;
+                if(inputMode){
+                    board.setSquare(63,buttonSelector);
+                    Cell[63].setText(Character.toString(board.getSquare(63)));
+                }
             }
         });
 
@@ -926,6 +1249,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[64].setSelected(true);
                 Cell[64].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 64;
+                if(inputMode){
+                    board.setSquare(64,buttonSelector);
+                    Cell[64].setText(Character.toString(board.getSquare(64)));
+                }
             }
         });
 
@@ -936,6 +1263,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[65].setSelected(true);
                 Cell[65].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 65;
+                if(inputMode){
+                    board.setSquare(65,buttonSelector);
+                    Cell[65].setText(Character.toString(board.getSquare(65)));
+                }
             }
         });
 
@@ -946,6 +1277,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[66].setSelected(true);
                 Cell[66].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 66;
+                if(inputMode){
+                    board.setSquare(66,buttonSelector);
+                    Cell[66].setText(Character.toString(board.getSquare(66)));
+                }
             }
         });
 
@@ -956,6 +1291,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[67].setSelected(true);
                 Cell[67].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 67;
+                if(inputMode){
+                    board.setSquare(67,buttonSelector);
+                    Cell[67].setText(Character.toString(board.getSquare(67)));
+                }
             }
         });
 
@@ -966,6 +1305,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[68].setSelected(true);
                 Cell[68].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 68;
+                if(inputMode){
+                    board.setSquare(68,buttonSelector);
+                    Cell[68].setText(Character.toString(board.getSquare(68)));
+                }
             }
         });
 
@@ -976,6 +1319,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[69].setSelected(true);
                 Cell[69].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 69;
+                if(inputMode){
+                    board.setSquare(69,buttonSelector);
+                    Cell[69].setText(Character.toString(board.getSquare(69)));
+                }
             }
         });
 
@@ -986,6 +1333,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[70].setSelected(true);
                 Cell[70].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 70;
+                if(inputMode){
+                    board.setSquare(70,buttonSelector);
+                    Cell[70].setText(Character.toString(board.getSquare(70)));
+                }
             }
         });
 
@@ -996,6 +1347,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[71].setSelected(true);
                 Cell[71].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 71;
+                if(inputMode){
+                    board.setSquare(71,buttonSelector);
+                    Cell[71].setText(Character.toString(board.getSquare(71)));
+                }
             }
         });
 
@@ -1006,6 +1361,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[72].setSelected(true);
                 Cell[72].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 72;
+                if(inputMode){
+                    board.setSquare(72,buttonSelector);
+                    Cell[72].setText(Character.toString(board.getSquare(72)));
+                }
             }
         });
 
@@ -1016,6 +1375,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[73].setSelected(true);
                 Cell[73].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 73;
+                if(inputMode){
+                    board.setSquare(73,buttonSelector);
+                    Cell[73].setText(Character.toString(board.getSquare(73)));
+                }
             }
         });
 
@@ -1026,6 +1389,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[74].setSelected(true);
                 Cell[74].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 74;
+                if(inputMode){
+                    board.setSquare(74,buttonSelector);
+                    Cell[74].setText(Character.toString(board.getSquare(74)));
+                }
             }
         });
 
@@ -1036,6 +1403,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[75].setSelected(true);
                 Cell[75].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 75;
+                if(inputMode){
+                    board.setSquare(75,buttonSelector);
+                    Cell[75].setText(Character.toString(board.getSquare(75)));
+                }
             }
         });
 
@@ -1046,6 +1417,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[76].setSelected(true);
                 Cell[76].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 76;
+                if(inputMode){
+                    board.setSquare(76,buttonSelector);
+                    Cell[76].setText(Character.toString(board.getSquare(76)));
+                }
             }
         });
 
@@ -1056,6 +1431,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[77].setSelected(true);
                 Cell[77].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 77;
+                if(inputMode){
+                    board.setSquare(77,buttonSelector);
+                    Cell[77].setText(Character.toString(board.getSquare(77)));
+                }
             }
         });
 
@@ -1066,6 +1445,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[78].setSelected(true);
                 Cell[78].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 78;
+                if(inputMode){
+                    board.setSquare(78,buttonSelector);
+                    Cell[78].setText(Character.toString(board.getSquare(78)));
+                }
             }
         });
 
@@ -1076,6 +1459,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[79].setSelected(true);
                 Cell[79].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 79;
+                if(inputMode){
+                    board.setSquare(79,buttonSelector);
+                    Cell[79].setText(Character.toString(board.getSquare(79)));
+                }
             }
         });
 
@@ -1086,6 +1473,10 @@ public class GameActivity extends AppCompatActivity {
                 Cell[80].setSelected(true);
                 Cell[80].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
                 cellSelector = 80;
+                if(inputMode){
+                    board.setSquare(80,buttonSelector);
+                    Cell[80].setText(Character.toString(board.getSquare(80)));
+                }
             }
         });
 
@@ -1097,6 +1488,18 @@ public class GameActivity extends AppCompatActivity {
             Cell[i].setSelected(false);
             Cell[i].setBackgroundColor(getResources().getColor(R.color.colorPrimBack));
         }
+    }
+
+    public void ClearSelectedBtn(){
+        btn1.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn2.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn3.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn4.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn5.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn6.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn7.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn8.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        btn9.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
     }
 
 
