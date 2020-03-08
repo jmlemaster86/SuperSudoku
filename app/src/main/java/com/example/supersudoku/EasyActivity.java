@@ -14,8 +14,29 @@ public class EasyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_easymenu);
 
         puz1 = (Button)findViewById(R.id.button);
+        puz2 = (Button)findViewById(R.id.button2);
+        puz3 = (Button)findViewById(R.id.button3);
+        puz4 = (Button)findViewById(R.id.button4);
 
         puz1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+            }
+        });
+
+        puz2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+            }
+        });
+
+        puz3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+            }
+        });
+
+        puz4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(new Intent(EasyActivity.this, GameActivity.class));
             }
