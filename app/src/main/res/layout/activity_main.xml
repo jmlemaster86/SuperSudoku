@@ -125,18 +125,6 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="60dp"
-=======
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="64dp"
->>>>>>> Stashed changes
-        android:text="Button"
-=======
         android:background="@android:color/holo_green_light"
         android:text="Easy"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +156,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.247"
->>>>>>> Jon
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.468" />
