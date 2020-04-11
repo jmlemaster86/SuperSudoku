@@ -6,18 +6,16 @@
     android:layout_height="match_parent">
 
 
-
-
-
     <Button
         android:id="@+id/keypad4"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
         android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/keypad8"
         app:layout_constraintEnd_toStartOf="@+id/keypad5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/keypad3"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintStart_toEndOf="@+id/keypad3" />
 
     <Button
         android:id="@+id/keypad3"
@@ -34,31 +32,34 @@
         android:id="@+id/keypad1"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
         android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/keypad8"
         app:layout_constraintEnd_toStartOf="@+id/keypad2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/keypad5"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
         android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/keypad8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/keypad4"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintStart_toEndOf="@+id/keypad4" />
 
     <Button
         android:id="@+id/keypad2"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
         android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/keypad8"
         app:layout_constraintEnd_toStartOf="@+id/keypad3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/keypad1"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintStart_toEndOf="@+id/keypad1" />
 
     <Button
         android:id="@+id/keypad8"
@@ -115,989 +116,1396 @@
         app:layout_constraintStart_toEndOf="@+id/keypad9"
         app:layout_constraintTop_toBottomOf="@+id/keypad5" />
 
-    <TableLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tableLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/keypad3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/Cell0"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(0)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(1)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell0"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell1"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell2"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell3"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell5"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell4"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell6"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell5"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell7"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell6"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-    <TextView
-        android:id="@+id/Cell8"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell7"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
-
-
-    <TextView
-        android:id="@+id/Cell9"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Cell0" />
-
-    <TextView
-        android:id="@+id/Cell10"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell9"
-        app:layout_constraintTop_toBottomOf="@+id/Cell1" />
-
-    <TextView
-        android:id="@+id/Cell11"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell10"
-        app:layout_constraintTop_toBottomOf="@+id/Cell2" />
-
-    <TextView
-        android:id="@+id/Cell12"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell11"
-        app:layout_constraintTop_toBottomOf="@+id/Cell3" />
-
-    <TextView
-        android:id="@+id/Cell13"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell12"
-        app:layout_constraintTop_toBottomOf="@+id/Cell4" />
-
-    <TextView
-        android:id="@+id/Cell14"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell13"
-        app:layout_constraintTop_toBottomOf="@+id/Cell5" />
-
-    <TextView
-        android:id="@+id/Cell15"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell14"
-        app:layout_constraintTop_toBottomOf="@+id/Cell6" />
-
-    <TextView
-        android:id="@+id/Cell16"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell15"
-        app:layout_constraintTop_toBottomOf="@+id/Cell7" />
-
-    <TextView
-        android:id="@+id/Cell17"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell16"
-        app:layout_constraintTop_toBottomOf="@+id/Cell8" />
-
-    <TextView
-        android:id="@+id/Cell18"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell9" />
-
-    <TextView
-        android:id="@+id/Cell19"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell18"
-        app:layout_constraintTop_toBottomOf="@+id/Cell10" />
-
-    <TextView
-        android:id="@+id/Cell20"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell19"
-        app:layout_constraintTop_toBottomOf="@+id/Cell11" />
-
-    <TextView
-        android:id="@+id/Cell21"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell20"
-        app:layout_constraintTop_toBottomOf="@+id/Cell12" />
-
-    <TextView
-        android:id="@+id/Cell22"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell21"
-        app:layout_constraintTop_toBottomOf="@+id/Cell13" />
-
-    <TextView
-        android:id="@+id/Cell23"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell22"
-        app:layout_constraintTop_toBottomOf="@+id/Cell14" />
-
-    <TextView
-        android:id="@+id/Cell24"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell23"
-        app:layout_constraintTop_toBottomOf="@+id/Cell15" />
-
-    <TextView
-        android:id="@+id/Cell25"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell24"
-        app:layout_constraintTop_toBottomOf="@+id/Cell16" />
-
-    <TextView
-        android:id="@+id/Cell26"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(20)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell25"
-        app:layout_constraintTop_toBottomOf="@+id/Cell17" />
-
-    <TextView
-        android:id="@+id/Cell27"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell18" />
-
-    <TextView
-        android:id="@+id/Cell28"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell27"
-        app:layout_constraintTop_toBottomOf="@+id/Cell19" />
-
-    <TextView
-        android:id="@+id/Cell29"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell28"
-        app:layout_constraintTop_toBottomOf="@+id/Cell20" />
-
-    <TextView
-        android:id="@+id/Cell30"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell29"
-        app:layout_constraintTop_toBottomOf="@+id/Cell21" />
-
-    <TextView
-        android:id="@+id/Cell31"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell30"
-        app:layout_constraintTop_toBottomOf="@+id/Cell22" />
-
-    <TextView
-        android:id="@+id/Cell32"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell31"
-        app:layout_constraintTop_toBottomOf="@+id/Cell23" />
-
-    <TextView
-        android:id="@+id/Cell33"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell32"
-        app:layout_constraintTop_toBottomOf="@+id/Cell24" />
-
-    <TextView
-        android:id="@+id/Cell34"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell33"
-        app:layout_constraintTop_toBottomOf="@+id/Cell25" />
-
-    <TextView
-        android:id="@+id/Cell35"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell34"
-        app:layout_constraintTop_toBottomOf="@+id/Cell26" />
-
-    <TextView
-        android:id="@+id/Cell36"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell27" />
-
-    <TextView
-        android:id="@+id/Cell37"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell36"
-        app:layout_constraintTop_toBottomOf="@+id/Cell28" />
-
-    <TextView
-        android:id="@+id/Cell38"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell37"
-        app:layout_constraintTop_toBottomOf="@+id/Cell29" />
-
-    <TextView
-        android:id="@+id/Cell39"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell38"
-        app:layout_constraintTop_toBottomOf="@+id/Cell30" />
-
-    <TextView
-        android:id="@+id/Cell40"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell39"
-        app:layout_constraintTop_toBottomOf="@+id/Cell31" />
-
-    <TextView
-        android:id="@+id/Cell41"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell40"
-        app:layout_constraintTop_toBottomOf="@+id/Cell32" />
-
-    <TextView
-        android:id="@+id/Cell42"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell41"
-        app:layout_constraintTop_toBottomOf="@+id/Cell33" />
-
-    <TextView
-        android:id="@+id/Cell43"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell42"
-        app:layout_constraintTop_toBottomOf="@+id/Cell34" />
-
-    <TextView
-        android:id="@+id/Cell44"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@{board.getSquare(19)}"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell43"
-        app:layout_constraintTop_toBottomOf="@+id/Cell35" />
-
-    <TextView
-        android:id="@+id/Cell45"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell36" />
-
-    <TextView
-        android:id="@+id/Cell46"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell45"
-        app:layout_constraintTop_toBottomOf="@+id/Cell37" />
-
-    <TextView
-        android:id="@+id/Cell47"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell46"
-        app:layout_constraintTop_toBottomOf="@+id/Cell38" />
-
-    <TextView
-        android:id="@+id/Cell48"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell47"
-        app:layout_constraintTop_toBottomOf="@+id/Cell39" />
-
-    <TextView
-        android:id="@+id/Cell49"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell48"
-        app:layout_constraintTop_toBottomOf="@+id/Cell40" />
-
-    <TextView
-        android:id="@+id/Cell50"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell49"
-        app:layout_constraintTop_toBottomOf="@+id/Cell41" />
-
-    <TextView
-        android:id="@+id/Cell51"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell50"
-        app:layout_constraintTop_toBottomOf="@+id/Cell42" />
-
-    <TextView
-        android:id="@+id/Cell52"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell51"
-        app:layout_constraintTop_toBottomOf="@+id/Cell43" />
-
-    <TextView
-        android:id="@+id/Cell53"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell52"
-        app:layout_constraintTop_toBottomOf="@+id/Cell44" />
-
-    <TextView
-        android:id="@+id/Cell54"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell45" />
-
-    <TextView
-        android:id="@+id/Cell55"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell54"
-        app:layout_constraintTop_toBottomOf="@+id/Cell46" />
-
-    <TextView
-        android:id="@+id/Cell56"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell55"
-        app:layout_constraintTop_toBottomOf="@+id/Cell47" />
-
-    <TextView
-        android:id="@+id/Cell57"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell56"
-        app:layout_constraintTop_toBottomOf="@+id/Cell48" />
-
-    <TextView
-        android:id="@+id/Cell58"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell57"
-        app:layout_constraintTop_toBottomOf="@+id/Cell49" />
-
-    <TextView
-        android:id="@+id/Cell59"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell58"
-        app:layout_constraintTop_toBottomOf="@+id/Cell50" />
-
-    <TextView
-        android:id="@+id/Cell60"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell59"
-        app:layout_constraintTop_toBottomOf="@+id/Cell51" />
-
-    <TextView
-        android:id="@+id/Cell61"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell60"
-        app:layout_constraintTop_toBottomOf="@+id/Cell52" />
-
-    <TextView
-        android:id="@+id/Cell62"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell61"
-        app:layout_constraintTop_toBottomOf="@+id/Cell53" />
-
-    <TextView
-        android:id="@+id/Cell63"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell54" />
-
-    <TextView
-        android:id="@+id/Cell64"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell63"
-        app:layout_constraintTop_toBottomOf="@+id/Cell55" />
-
-    <TextView
-        android:id="@+id/Cell65"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell64"
-        app:layout_constraintTop_toBottomOf="@+id/Cell56" />
-
-    <TextView
-        android:id="@+id/Cell66"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell65"
-        app:layout_constraintTop_toBottomOf="@+id/Cell57" />
-
-    <TextView
-        android:id="@+id/Cell67"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell66"
-        app:layout_constraintTop_toBottomOf="@+id/Cell58" />
-
-    <TextView
-        android:id="@+id/Cell68"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell67"
-        app:layout_constraintTop_toBottomOf="@+id/Cell59" />
-
-    <TextView
-        android:id="@+id/Cell69"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell68"
-        app:layout_constraintTop_toBottomOf="@+id/Cell60" />
-
-    <TextView
-        android:id="@+id/Cell70"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell69"
-        app:layout_constraintTop_toBottomOf="@+id/Cell61" />
-
-    <TextView
-        android:id="@+id/Cell71"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell70"
-        app:layout_constraintTop_toBottomOf="@+id/Cell62" />
-
-    <TextView
-        android:id="@+id/Cell72"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/Cell63" />
-
-    <TextView
-        android:id="@+id/Cell73"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell72"
-        app:layout_constraintTop_toBottomOf="@+id/Cell64" />
-
-    <TextView
-        android:id="@+id/Cell74"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell73"
-        app:layout_constraintTop_toBottomOf="@+id/Cell65" />
-
-    <TextView
-        android:id="@+id/Cell75"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell74"
-        app:layout_constraintTop_toBottomOf="@+id/Cell66" />
-
-    <TextView
-        android:id="@+id/Cell76"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell75"
-        app:layout_constraintTop_toBottomOf="@+id/Cell67" />
-
-    <TextView
-        android:id="@+id/Cell77"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell76"
-        app:layout_constraintTop_toBottomOf="@+id/Cell68" />
-
-    <TextView
-        android:id="@+id/Cell78"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell77"
-        app:layout_constraintTop_toBottomOf="@+id/Cell69" />
-
-    <TextView
-        android:id="@+id/Cell79"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell78"
-        app:layout_constraintTop_toBottomOf="@+id/Cell70" />
-
-    <TextView
-        android:id="@+id/Cell80"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Cell79"
-        app:layout_constraintTop_toBottomOf="@+id/Cell71" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Cell0"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(0)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell1"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(1)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell0"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell2"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(2)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell1"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell3"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(3)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell2"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell4"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(4)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell3"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell5"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(5)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell4"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell6"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(6)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell5"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell7"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(7)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell6"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell8"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(8)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell7"
+            app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+        <TextView
+            android:id="@+id/Cell9"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(9)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell0" />
+
+        <TextView
+            android:id="@+id/Cell10"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(10)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell9"
+            app:layout_constraintTop_toBottomOf="@+id/Cell1" />
+
+        <TextView
+            android:id="@+id/Cell11"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(11)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell10"
+            app:layout_constraintTop_toBottomOf="@+id/Cell2" />
+
+        <TextView
+            android:id="@+id/Cell12"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(12)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell11"
+            app:layout_constraintTop_toBottomOf="@+id/Cell3" />
+
+        <TextView
+            android:id="@+id/Cell13"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(13)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell12"
+            app:layout_constraintTop_toBottomOf="@+id/Cell4" />
+
+        <TextView
+            android:id="@+id/Cell14"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(14)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell13"
+            app:layout_constraintTop_toBottomOf="@+id/Cell5" />
+
+        <TextView
+            android:id="@+id/Cell15"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(15)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell14"
+            app:layout_constraintTop_toBottomOf="@+id/Cell6" />
+
+        <TextView
+            android:id="@+id/Cell16"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(16)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell15"
+            app:layout_constraintTop_toBottomOf="@+id/Cell7" />
+
+        <TextView
+            android:id="@+id/Cell17"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(17)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell16"
+            app:layout_constraintTop_toBottomOf="@+id/Cell8" />
+
+        <TextView
+            android:id="@+id/Cell18"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(18)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell9" />
+
+        <TextView
+            android:id="@+id/Cell19"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(19)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell18"
+            app:layout_constraintTop_toBottomOf="@+id/Cell10" />
+
+        <TextView
+            android:id="@+id/Cell20"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(20)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell19"
+            app:layout_constraintTop_toBottomOf="@+id/Cell11" />
+
+        <TextView
+            android:id="@+id/Cell21"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(21)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell20"
+            app:layout_constraintTop_toBottomOf="@+id/Cell12" />
+
+        <TextView
+            android:id="@+id/Cell22"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(22)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell21"
+            app:layout_constraintTop_toBottomOf="@+id/Cell13" />
+
+        <TextView
+            android:id="@+id/Cell23"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(23)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell22"
+            app:layout_constraintTop_toBottomOf="@+id/Cell14" />
+
+        <TextView
+            android:id="@+id/Cell24"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(24)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell23"
+            app:layout_constraintTop_toBottomOf="@+id/Cell15" />
+
+        <TextView
+            android:id="@+id/Cell25"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(25)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell24"
+            app:layout_constraintTop_toBottomOf="@+id/Cell16" />
+
+        <TextView
+            android:id="@+id/Cell26"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(26)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell25"
+            app:layout_constraintTop_toBottomOf="@+id/Cell17" />
+
+        <TextView
+            android:id="@+id/Cell27"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(27)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell18" />
+
+        <TextView
+            android:id="@+id/Cell28"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(28)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell27"
+            app:layout_constraintTop_toBottomOf="@+id/Cell19" />
+
+        <TextView
+            android:id="@+id/Cell29"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(29)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell28"
+            app:layout_constraintTop_toBottomOf="@+id/Cell20" />
+
+        <TextView
+            android:id="@+id/Cell30"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(30)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell29"
+            app:layout_constraintTop_toBottomOf="@+id/Cell21" />
+
+        <TextView
+            android:id="@+id/Cell31"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(31)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell30"
+            app:layout_constraintTop_toBottomOf="@+id/Cell22" />
+
+        <TextView
+            android:id="@+id/Cell32"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(32)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell31"
+            app:layout_constraintTop_toBottomOf="@+id/Cell23" />
+
+        <TextView
+            android:id="@+id/Cell33"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(33)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell32"
+            app:layout_constraintTop_toBottomOf="@+id/Cell24" />
+
+        <TextView
+            android:id="@+id/Cell34"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(34)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell33"
+            app:layout_constraintTop_toBottomOf="@+id/Cell25" />
+
+        <TextView
+            android:id="@+id/Cell35"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(35)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell34"
+            app:layout_constraintTop_toBottomOf="@+id/Cell26" />
+
+        <TextView
+            android:id="@+id/Cell36"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(36)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell27" />
+
+        <TextView
+            android:id="@+id/Cell37"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(37)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell36"
+            app:layout_constraintTop_toBottomOf="@+id/Cell28" />
+
+        <TextView
+            android:id="@+id/Cell38"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(38)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell37"
+            app:layout_constraintTop_toBottomOf="@+id/Cell29" />
+
+        <TextView
+            android:id="@+id/Cell39"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(39)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell38"
+            app:layout_constraintTop_toBottomOf="@+id/Cell30" />
+
+        <TextView
+            android:id="@+id/Cell40"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(40)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell39"
+            app:layout_constraintTop_toBottomOf="@+id/Cell31" />
+
+        <TextView
+            android:id="@+id/Cell41"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(41)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell40"
+            app:layout_constraintTop_toBottomOf="@+id/Cell32" />
+
+        <TextView
+            android:id="@+id/Cell42"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(42)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell41"
+            app:layout_constraintTop_toBottomOf="@+id/Cell33" />
+
+        <TextView
+            android:id="@+id/Cell43"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(43)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell42"
+            app:layout_constraintTop_toBottomOf="@+id/Cell34" />
+
+        <TextView
+            android:id="@+id/Cell44"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(44)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell43"
+            app:layout_constraintTop_toBottomOf="@+id/Cell35" />
+
+        <TextView
+            android:id="@+id/Cell45"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(45)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell36" />
+
+        <TextView
+            android:id="@+id/Cell46"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(46)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell45"
+            app:layout_constraintTop_toBottomOf="@+id/Cell37" />
+
+        <TextView
+            android:id="@+id/Cell47"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(47)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell46"
+            app:layout_constraintTop_toBottomOf="@+id/Cell38" />
+
+        <TextView
+            android:id="@+id/Cell48"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(48)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell47"
+            app:layout_constraintTop_toBottomOf="@+id/Cell39" />
+
+        <TextView
+            android:id="@+id/Cell49"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(49)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell48"
+            app:layout_constraintTop_toBottomOf="@+id/Cell40" />
+
+        <TextView
+            android:id="@+id/Cell50"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(50)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell49"
+            app:layout_constraintTop_toBottomOf="@+id/Cell41" />
+
+        <TextView
+            android:id="@+id/Cell51"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(51)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell50"
+            app:layout_constraintTop_toBottomOf="@+id/Cell42" />
+
+        <TextView
+            android:id="@+id/Cell52"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(52)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell51"
+            app:layout_constraintTop_toBottomOf="@+id/Cell43" />
+
+        <TextView
+            android:id="@+id/Cell53"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(53)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell52"
+            app:layout_constraintTop_toBottomOf="@+id/Cell44" />
+
+        <TextView
+            android:id="@+id/Cell54"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(54)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell45" />
+
+        <TextView
+            android:id="@+id/Cell55"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(55)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell54"
+            app:layout_constraintTop_toBottomOf="@+id/Cell46" />
+
+        <TextView
+            android:id="@+id/Cell56"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(56)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell55"
+            app:layout_constraintTop_toBottomOf="@+id/Cell47" />
+
+        <TextView
+            android:id="@+id/Cell57"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(57)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell56"
+            app:layout_constraintTop_toBottomOf="@+id/Cell48" />
+
+        <TextView
+            android:id="@+id/Cell58"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(58)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell57"
+            app:layout_constraintTop_toBottomOf="@+id/Cell49" />
+
+        <TextView
+            android:id="@+id/Cell59"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(59)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell58"
+            app:layout_constraintTop_toBottomOf="@+id/Cell50" />
+
+        <TextView
+            android:id="@+id/Cell60"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(60)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell59"
+            app:layout_constraintTop_toBottomOf="@+id/Cell51" />
+
+        <TextView
+            android:id="@+id/Cell61"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(61)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell60"
+            app:layout_constraintTop_toBottomOf="@+id/Cell52" />
+
+        <TextView
+            android:id="@+id/Cell62"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(62)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell61"
+            app:layout_constraintTop_toBottomOf="@+id/Cell53" />
+
+        <TextView
+            android:id="@+id/Cell63"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(63)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell54" />
+
+        <TextView
+            android:id="@+id/Cell64"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(64)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell63"
+            app:layout_constraintTop_toBottomOf="@+id/Cell55" />
+
+        <TextView
+            android:id="@+id/Cell65"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(65)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell64"
+            app:layout_constraintTop_toBottomOf="@+id/Cell56" />
+
+        <TextView
+            android:id="@+id/Cell66"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(66)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell65"
+            app:layout_constraintTop_toBottomOf="@+id/Cell57" />
+
+        <TextView
+            android:id="@+id/Cell67"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(67)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell66"
+            app:layout_constraintTop_toBottomOf="@+id/Cell58" />
+
+        <TextView
+            android:id="@+id/Cell68"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(68)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell67"
+            app:layout_constraintTop_toBottomOf="@+id/Cell59" />
+
+        <TextView
+            android:id="@+id/Cell69"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(69)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell68"
+            app:layout_constraintTop_toBottomOf="@+id/Cell60" />
+
+        <TextView
+            android:id="@+id/Cell70"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(70)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell69"
+            app:layout_constraintTop_toBottomOf="@+id/Cell61" />
+
+        <TextView
+            android:id="@+id/Cell71"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(71)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell70"
+            app:layout_constraintTop_toBottomOf="@+id/Cell62" />
+
+        <TextView
+            android:id="@+id/Cell72"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(72)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell63" />
+
+        <TextView
+            android:id="@+id/Cell73"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(73)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell72"
+            app:layout_constraintTop_toBottomOf="@+id/Cell64" />
+
+        <TextView
+            android:id="@+id/Cell74"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(74)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell73"
+            app:layout_constraintTop_toBottomOf="@+id/Cell65" />
+
+        <TextView
+            android:id="@+id/Cell75"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(75)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell74"
+            app:layout_constraintTop_toBottomOf="@+id/Cell66" />
+
+        <TextView
+            android:id="@+id/Cell76"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(76)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell75"
+            app:layout_constraintTop_toBottomOf="@+id/Cell67" />
+
+        <TextView
+            android:id="@+id/Cell77"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(77)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell76"
+            app:layout_constraintTop_toBottomOf="@+id/Cell68" />
+
+        <TextView
+            android:id="@+id/Cell78"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(78)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell77"
+            app:layout_constraintTop_toBottomOf="@+id/Cell69" />
+
+        <TextView
+            android:id="@+id/Cell79"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(79)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell78"
+            app:layout_constraintTop_toBottomOf="@+id/Cell70" />
+
+        <TextView
+            android:id="@+id/Cell80"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="@{board.getSquare(80)}"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/Cell79"
+            app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/Cell71" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 
