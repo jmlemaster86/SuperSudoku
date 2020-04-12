@@ -2,14 +2,18 @@ package com.example.supersudoku;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 
 public class GameActivity extends AppCompatActivity {
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, modeBtn;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, modeBtn, nextBtn, exitBtn;
     TextView[] Cell;
     int cellSelector;
     int buttonSelector;
@@ -25,6 +29,8 @@ public class GameActivity extends AppCompatActivity {
             0, -1, 0, 0, 0, -1, 0, 0, 0,
             0, -1, -1, -1, -1, 0, -1, 0, 0,
             -1, 0, -1, 0, -1, 0, -1, 0, 0};
+
+
     int[] solvedBoard = {1, 9, 5, 6, 7, 3, 8, 2, 4,
             7, 2, 8, 9, 4, 1, 3, 6, 5,
             3, 4, 6, 2, 5, 8, 9, 7, 1,
@@ -81,6 +87,8 @@ public class GameActivity extends AppCompatActivity {
                     1, 7, 8, 2, 9, 3, 6, 4, 5};
     Board board;
 
+    View victory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +96,8 @@ public class GameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        int game = extras.getInt("game");
-        int difficulty = extras.getInt("difficulty");
+        final int game = extras.getInt("game");
+        final int difficulty = extras.getInt("difficulty");
 
         cellSelector = -1;
         buttonSelector = 0;
@@ -105,6 +113,9 @@ public class GameActivity extends AppCompatActivity {
         btn8 = (Button)findViewById(R.id.keypad8);
         btn9 = (Button)findViewById(R.id.keypad9);
         modeBtn = (Button)findViewById(R.id.keypadmodebutton);
+        nextBtn = (Button)findViewById(R.id.Next);
+        exitBtn = (Button)findViewById(R.id.Exit);
+        victory = findViewById(R.id.Victory);
 
         //Initialize all Cells (so far)
         Cell = new TextView[81];
@@ -209,7 +220,23 @@ public class GameActivity extends AppCompatActivity {
         ClearSelectedBtn();
         modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
 
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                intent.putExtra("game", (game + 1) % 3);
+                intent.putExtra("difficulty", difficulty);
+                startActivity(intent);
+            }
+        });
 
+        exitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         //setup button listeners
         modeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1633,7 +1660,14 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         }
+        if(board.isValid(index))
+            if(board.isSolved())
+                victoryPop();
     }
 
+    public void victoryPop(){
+        victory.setVisibility(View.VISIBLE);
+        victory.setClickable(true);
+    }
 
 }
