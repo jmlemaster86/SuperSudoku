@@ -1,5 +1,6 @@
 package com.example.supersudoku;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class GameActivity extends AppCompatActivity {
     int cellSelector;
     int buttonSelector;
     boolean inputMode;
+
     //board 33 from book
     int[] workingBoard = {0, 0, -1, 0, -1, 0, -1, 0, -1,
             0, 0, -1, 0, -1, -1, -1, -1, 0,
@@ -83,6 +85,11 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameboard);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        int game = extras.getInt("game");
+        int difficulty = extras.getInt("difficulty");
 
         cellSelector = -1;
         buttonSelector = 0;
@@ -186,7 +193,12 @@ public class GameActivity extends AppCompatActivity {
 
 
         //Initialize the game board data
-        board = new Board(9, workingBoard, solvedBoard);
+        if(game == 0)
+            board = new Board(9, workingBoard, solvedBoard);
+        else if(game == 1)
+            board = new Board(9,workingBoard2, solvedBoard2);
+        else
+            board = new Board(9, workingBoard3, solvedBoard3);
 
         for(int i = 0; i < 81; ++i){
             Cell[i].setText(Character.toString(board.getSquare(i)));

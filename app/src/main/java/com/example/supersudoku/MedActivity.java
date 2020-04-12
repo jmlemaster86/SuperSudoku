@@ -20,25 +20,37 @@ public class MedActivity extends AppCompatActivity {
 
         puz1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MedActivity.this, GameActivity.class));
+                Intent intent = new Intent(MedActivity.this, GameActivity.class);
+                intent.putExtra("game", 0);
+                intent.putExtra("difficulty", 1);
+                startActivity(intent);
             }
         });
 
         puz2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MedActivity.this, GameActivity.class));
+                Intent intent = new Intent(MedActivity.this, GameActivity.class);
+                intent.putExtra("game", 1);
+                intent.putExtra("difficulty", 1);
+                startActivity(intent);
             }
         });
 
         puz3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MedActivity.this, GameActivity.class));
+                Intent intent = new Intent(MedActivity.this, GameActivity.class);
+                intent.putExtra("game", 2);
+                intent.putExtra("difficulty", 1);
+                startActivity(intent);
             }
         });
 
         puz4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MedActivity.this, GameActivity.class));
+                Intent intent = new Intent(MedActivity.this, GameActivity.class);
+                intent.putExtra("game", 3);
+                intent.putExtra("difficulty", 1);
+                startActivity(intent);
             }
         });
     }
