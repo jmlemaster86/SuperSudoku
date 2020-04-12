@@ -34,6 +34,10 @@ class Board{
 	            workingBoard[i] = new Cell(-1);
 	            solvedBoard[i] = partBoard[i];
             }
+	        else{
+	            workingBoard[i] = new Cell(0);
+	            solvedBoard[i] = partBoard[i];
+            }
         }
     }
 	
