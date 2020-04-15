@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.Layout;
+import android.view.DragEvent;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -16,7 +19,8 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class GameActivity extends AppCompatActivity {
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, modeBtn, nextBtn, exitBtn;
+    Button modeBtn, nextBtn, exitBtn;
+    Button[] btn;
     TextView[] Cell;
     ConstraintLayout tableLayout;
     int cellSelector;
@@ -201,16 +205,18 @@ public class GameActivity extends AppCompatActivity {
         buttonSelector = 0;
         inputMode = false;
         tableLayout = findViewById(R.id.tableLayout);
+
         //Initialize all buttons
-        btn1 = (Button)findViewById(R.id.keypad1);
-        btn2 = (Button)findViewById(R.id.keypad2);
-        btn3 = (Button)findViewById(R.id.keypad3);
-        btn4 = (Button)findViewById(R.id.keypad4);
-        btn5 = (Button)findViewById(R.id.keypad5);
-        btn6 = (Button)findViewById(R.id.keypad6);
-        btn7 = (Button)findViewById(R.id.keypad7);
-        btn8 = (Button)findViewById(R.id.keypad8);
-        btn9 = (Button)findViewById(R.id.keypad9);
+        btn = new Button[10];
+        btn[1] = (Button)findViewById(R.id.keypad1);
+        btn[2] = (Button)findViewById(R.id.keypad2);
+        btn[3] = (Button)findViewById(R.id.keypad3);
+        btn[4] = (Button)findViewById(R.id.keypad4);
+        btn[5] = (Button)findViewById(R.id.keypad5);
+        btn[6] = (Button)findViewById(R.id.keypad6);
+        btn[7] = (Button)findViewById(R.id.keypad7);
+        btn[8] = (Button)findViewById(R.id.keypad8);
+        btn[9] = (Button)findViewById(R.id.keypad9);
         modeBtn = (Button)findViewById(R.id.keypadmodebutton);
         nextBtn = (Button)findViewById(R.id.Next);
         exitBtn = (Button)findViewById(R.id.Exit);
@@ -301,7 +307,6 @@ public class GameActivity extends AppCompatActivity {
         Cell[80] = (TextView)findViewById(R.id.Cell80);
 
 
-
         //Initialize the game board data
         switch(game){
             case 0:
@@ -363,6 +368,7 @@ public class GameActivity extends AppCompatActivity {
         ClearSelectedBtn();
         modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
 
+        //setup button listeners
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -379,7 +385,6 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //setup button listeners
         modeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -395,156 +400,32 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 1;
-                    btn1.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+        for(int i = 1; i < 10; ++i) {
+            final int j = i;
+            btn[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ClearSelectedBtn();
+                    if (inputMode) {
+                        buttonSelector = j;
+                        btn[j].setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                    } else {
+                        board.setSquare(cellSelector, j);
+                        Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
+                        CheckConflict(cellSelector);
+                    }
                 }
-                else {
-                    board.setSquare(cellSelector, 1);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
+            });
+        }
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 2;
-                    btn2.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 2);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
 
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 3;
-                    btn3.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 3);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 4;
-                    btn4.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 4);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 5;
-                    btn5.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 5);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 6;
-                    btn6.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 6);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 7;
-                    btn7.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 7);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 8;
-                    btn8.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 8);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
-
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClearSelectedBtn();
-                if(inputMode){
-                    buttonSelector = 9;
-                    btn9.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
-                }
-                else {
-                    board.setSquare(cellSelector, 9);
-                    Cell[cellSelector].setText(Character.toString(board.getSquare(cellSelector)));
-                    CheckConflict(cellSelector);
-                }
-            }
-        });
 
         //Setup Cell listeners
         for(int i = 0; i < 80; ++i) {
             final int j = i;
-            Cell[i].setOnClickListener(new View.OnClickListener() {
+            Cell[i].setOnTouchListener(new View.OnTouchListener() {
                 @Override
-                public void onClick(View v) {
+                public boolean onTouch(View v, MotionEvent event) {
                     ClearSelected();
                     Cell[j].setSelected(true);
                     Cell[j].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
@@ -554,6 +435,8 @@ public class GameActivity extends AppCompatActivity {
                         Cell[j].setText(Character.toString(board.getSquare(j)));
                         CheckConflict(j);
                     }
+                    return true;
+
                 }
             });
         }
@@ -570,15 +453,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void ClearSelectedBtn(){
-        btn1.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn2.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn3.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn4.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn5.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn6.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn7.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn8.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
-        btn9.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        for(int i = 1; i < 10; ++i) {
+            btn[i].setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        }
     }
 
     public void CheckConflict(int index){
@@ -621,11 +498,20 @@ public class GameActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event){
+        MotionEvent copy = MotionEvent.obtain(event);
+        super.dispatchTouchEvent(copy);
+        return zoomDetect.onTouchEvent(event);
+    }
+
     private class ZoomListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
         @Override
         public boolean onScale(ScaleGestureDetector scaleGestureDetector){
+            float offsetX = scaleGestureDetector.getFocusX();
+            float offsetY = scaleGestureDetector.getFocusY();
             zoomFact *= scaleGestureDetector.getScaleFactor();
-            zoomFact = Math.max(0.6f, Math.min(zoomFact, 10.0f));
+            zoomFact = Math.max(0.8f, Math.min(zoomFact, 2.5f));
             tableLayout.setScaleX(zoomFact);
             tableLayout.setScaleY(zoomFact);
             return true;
