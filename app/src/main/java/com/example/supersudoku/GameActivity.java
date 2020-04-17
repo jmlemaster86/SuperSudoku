@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.view.MotionEventCompat;
 
 public class GameActivity extends AppCompatActivity {
     Button modeBtn, nextBtn, exitBtn;
@@ -27,6 +28,13 @@ public class GameActivity extends AppCompatActivity {
     int buttonSelector;
     boolean inputMode;
     float zoomFact;
+    float touchX;
+    float touchY;
+    float curOffsetX;
+    float curOffsetY;
+    float maxOffset;
+    float tablePosX;
+    float tablePosY;
     ScaleGestureDetector zoomDetect;
 
     //board 33 from book
@@ -195,6 +203,8 @@ public class GameActivity extends AppCompatActivity {
 
         zoomFact = 1.0f;
         zoomDetect = new ScaleGestureDetector(this, new ZoomListener());
+        curOffsetX = 0.0f;
+        curOffsetY= 0.0f;
 
 
         Intent intent = getIntent();
@@ -205,6 +215,9 @@ public class GameActivity extends AppCompatActivity {
         buttonSelector = 0;
         inputMode = false;
         tableLayout = findViewById(R.id.tableLayout);
+
+        tablePosX = tableLayout.getX();
+        tablePosY = tableLayout.getY();
 
         //Initialize all buttons
         btn = new Button[10];
@@ -423,9 +436,9 @@ public class GameActivity extends AppCompatActivity {
         //Setup Cell listeners
         for(int i = 0; i < 80; ++i) {
             final int j = i;
-            Cell[i].setOnTouchListener(new View.OnTouchListener() {
+            Cell[i].setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onTouch(View v, MotionEvent event) {
+                public void onClick(View v) {
                     ClearSelected();
                     Cell[j].setSelected(true);
                     Cell[j].setBackgroundColor(getResources().getColor(R.color.colorSecBack));
@@ -435,14 +448,9 @@ public class GameActivity extends AppCompatActivity {
                         Cell[j].setText(Character.toString(board.getSquare(j)));
                         CheckConflict(j);
                     }
-                    return true;
-
                 }
             });
         }
-
-
-
     }
 
     public void ClearSelected(){
@@ -494,27 +502,67 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent event){
-        zoomDetect.onTouchEvent(event);
-        return true;
+        MotionEvent copy = MotionEvent.obtain(event);
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            touchX = event.getX();
+            touchY = event.getY();
+        }
+        if(event.getAction() == MotionEvent.ACTION_MOVE){
+            float distX = event.getX() - touchX;
+            float distY = event.getY() - touchY;
+            moveTable(distX, distY);
+            touchX = event.getX();
+            touchY = event.getY();
+
+        }
+
+        return zoomDetect.onTouchEvent(copy);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event){
         MotionEvent copy = MotionEvent.obtain(event);
         super.dispatchTouchEvent(copy);
-        return zoomDetect.onTouchEvent(event);
+        return onTouchEvent(event);
     }
 
     private class ZoomListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
         @Override
         public boolean onScale(ScaleGestureDetector scaleGestureDetector){
-            float offsetX = scaleGestureDetector.getFocusX();
-            float offsetY = scaleGestureDetector.getFocusY();
             zoomFact *= scaleGestureDetector.getScaleFactor();
-            zoomFact = Math.max(0.8f, Math.min(zoomFact, 2.5f));
+            zoomFact = Math.max(1.0f, Math.min(zoomFact, 3.0f));
             tableLayout.setScaleX(zoomFact);
             tableLayout.setScaleY(zoomFact);
+            maxOffset =  800.0f * (zoomFact - 1.0f);
             return true;
+        }
+
+    }
+
+    public void moveTable(float X, float Y){
+        float curX = tableLayout.getX();
+        float curY = tableLayout.getY();
+
+        //code to move table in X direction
+        if(curX + X >= tablePosX + maxOffset){
+            tableLayout.setX(tablePosX + maxOffset);
+        }
+        else if(curX + X <= tablePosX - maxOffset){
+            tableLayout.setX(tablePosX - maxOffset);
+        }
+        else{
+            tableLayout.setX(curX + X);
+        }
+
+        //code to move table in Y direction
+        if(curY + Y >= tablePosY + maxOffset){
+            tableLayout.setY(tablePosY + maxOffset);
+        }
+        else if(curY + Y <= tablePosY - maxOffset){
+            tableLayout.setY(tablePosY - maxOffset);
+        }
+        else{
+            tableLayout.setY(curY + Y);
         }
     }
 }
