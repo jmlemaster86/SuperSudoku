@@ -97,7 +97,7 @@ public class GameActivity extends AppCompatActivity {
         btn7 = (Button)findViewById(R.id.keypad7);
         btn8 = (Button)findViewById(R.id.keypad8);
         btn9 = (Button)findViewById(R.id.keypad9);
-        modeBtn = (Button)findViewById(R.id.keypadmodebutton);
+        modeBtn = (Button)findViewById(R.id.keypadsmallbig);
 
         //Initialize all Cells (so far)
         Cell = new TextView[81];
