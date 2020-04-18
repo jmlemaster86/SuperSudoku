@@ -20,25 +20,33 @@ public class HardActivity extends AppCompatActivity {
 
         puz1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HardActivity.this, GameActivity.class));
+                Intent intent = new Intent(HardActivity.this, GameActivity.class);
+                intent.putExtra("game", 8);
+                startActivity(intent);
             }
         });
 
         puz2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HardActivity.this, GameActivity.class));
+                Intent intent = new Intent(HardActivity.this, GameActivity.class);
+                intent.putExtra("game", 9);
+                startActivity(intent);
             }
         });
 
         puz3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HardActivity.this, GameActivity.class));
+                Intent intent = new Intent(HardActivity.this, GameActivity.class);
+                intent.putExtra("game", 10);
+                startActivity(intent);
             }
         });
 
         puz4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HardActivity.this, GameActivity.class));
+                Intent intent = new Intent(HardActivity.this, GameActivity.class);
+                intent.putExtra("game", 11);
+                startActivity(intent);
             }
         });
     }

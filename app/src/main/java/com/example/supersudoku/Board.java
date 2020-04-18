@@ -23,6 +23,23 @@ class Board{
 			solvedBoard[i] = 0;
 		}
 	}
+
+	//code to take a partial board as input
+	public Board(int[] partBoard){
+	    size = 9;
+	    this.workingBoard = new Cell[size * size];
+	    this.solvedBoard = new int[size * size];
+	    for(int i = 0; i < size * size; ++i){
+	        if(partBoard[i] != 0){
+	            workingBoard[i] = new Cell(-1);
+	            solvedBoard[i] = partBoard[i];
+            }
+	        else{
+	            workingBoard[i] = new Cell(0);
+	            solvedBoard[i] = partBoard[i];
+            }
+        }
+    }
 	
 	public Board(int size, int[] workingBoard, int[] solvedBoard){
 		this.workingBoard = new Cell[size * size];
@@ -36,14 +53,24 @@ class Board{
 	
 	//loops through to check if the board is solved
 	public boolean isSolved(){
+	    if(!isComplete())
+	        return false;
 		for(int i = 0; i < (size * size); ++i){
 			if(workingBoard[i].getActual() == -1)
 			    continue;
-			if(workingBoard[i].getActual() != solvedBoard[i])
+			if(!isValid(i))
 			    return false;
 		}
 		return true;
 	}
+
+	public boolean isComplete(){
+	    for(int i = 0; i < size * size; ++i){
+	        if(workingBoard[i].getActual() == 0)
+	            return false;
+        }
+	    return true;
+    }
 	
 	//getter for a cells value, returns solvedBoard's value if the cell is negative.
 	public char getSquare(int index){
@@ -70,27 +97,10 @@ class Board{
 		if(workingBoard[index].getActual() >= 0)
 			workingBoard[index].setActual(value);
 	}
-	
-	//Work in progress! Code to check if a particular cell's value is valid
-	public boolean isValid(int index){
-		int row = index / size;
-		int column = index % size;
-		int value;
-		if(workingBoard[index].getActual() <= -1)
-		    value = solvedBoard[index];
-		else
-		    value = workingBoard[index].getActual();
-		for(int i = 0; i < size; ++i){
-			int checkIndex = row * size + i;
-			if(checkIndex == index);
-			else if(this.getSquare(checkIndex) == value) return false;
-			checkIndex = column + (size * i);
-			if(checkIndex == index);
-			else if(this.getSquare(checkIndex) == value) return false;
-		}
-		return false;
-	}
 
+	public boolean isValid(int index){
+		return !rowConflict(index) && !colConflict(index) && !quadConflict(index);
+	}
 	//detects row conflicts, true if a conflict exist false if not
 	public boolean rowConflict(int index){
 		int row = index / size;

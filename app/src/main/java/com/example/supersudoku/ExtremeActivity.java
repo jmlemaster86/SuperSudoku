@@ -20,25 +20,33 @@ public class ExtremeActivity extends AppCompatActivity {
 
         puz1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ExtremeActivity.this, GameActivity.class));
+                Intent intent = new Intent(ExtremeActivity.this, GameActivity.class);
+                intent.putExtra("game", 12);
+                startActivity(intent);
             }
         });
 
         puz2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ExtremeActivity.this, GameActivity.class));
+                Intent intent = new Intent(ExtremeActivity.this, GameActivity.class);
+                intent.putExtra("game", 13);
+                startActivity(intent);
             }
         });
 
         puz3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ExtremeActivity.this, GameActivity.class));
+                Intent intent = new Intent(ExtremeActivity.this, GameActivity.class);
+                intent.putExtra("game", 14);
+                startActivity(intent);
             }
         });
 
         puz4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(ExtremeActivity.this, GameActivity.class));
+                Intent intent = new Intent(ExtremeActivity.this, GameActivity.class);
+                intent.putExtra("game", 15);
+                startActivity(intent);
             }
         });
     }

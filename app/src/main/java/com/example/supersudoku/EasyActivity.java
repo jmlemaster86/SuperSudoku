@@ -20,25 +20,34 @@ public class EasyActivity extends AppCompatActivity {
 
         puz1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+                Intent intent = new Intent(EasyActivity.this, GameActivity.class);
+                intent.putExtra("game", 0);
+                intent.putExtra("difficulty", 0);
+                startActivity(intent);
             }
         });
 
         puz2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+                Intent intent = new Intent(EasyActivity.this, GameActivity.class);
+                intent.putExtra("game", 1);
+                startActivity(intent);
             }
         });
 
         puz3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+                Intent intent = new Intent(EasyActivity.this, GameActivity.class);
+                intent.putExtra("game", 2);
+                startActivity(intent);
             }
         });
 
         puz4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(EasyActivity.this, GameActivity.class));
+                Intent intent = new Intent(EasyActivity.this, GameActivity.class);
+                intent.putExtra("game", 3);
+                startActivity(intent);
             }
         });
     }
