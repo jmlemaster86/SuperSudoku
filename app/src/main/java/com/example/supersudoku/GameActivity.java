@@ -16,11 +16,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.MotionEventCompat;
 
 public class GameActivity extends AppCompatActivity {
-    Button modeBtn, nextBtn, exitBtn;
+    Button modeBtn, nextBtn, exitBtn, smallBtn, eraserBtn;
     Button[] btn;
     TextView[] Cell;
     ConstraintLayout tableLayout;
@@ -197,9 +198,22 @@ public class GameActivity extends AppCompatActivity {
     View victory;
 
     @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameboard);
+
+        Toolbar toolbar = findViewById(R.id.gametoolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Super Sudoku");
 
         zoomFact = 1.0f;
         zoomDetect = new ScaleGestureDetector(this, new ZoomListener());
@@ -231,7 +245,8 @@ public class GameActivity extends AppCompatActivity {
         btn[8] = (Button)findViewById(R.id.keypad8);
         btn[9] = (Button)findViewById(R.id.keypad9);
         modeBtn = (Button)findViewById(R.id.keypadmodebutton);
-        mode2Btn = (Button)findViewById(R.id.keypadsmallbig);
+        smallBtn = (Button)findViewById(R.id.keypadsmallbig);
+        eraserBtn = (Button)findViewById(R.id.keypaderaser);
         nextBtn = (Button)findViewById(R.id.Next);
         exitBtn = (Button)findViewById(R.id.Exit);
         victory = findViewById(R.id.Victory);
@@ -381,6 +396,8 @@ public class GameActivity extends AppCompatActivity {
         ClearSelected();
         ClearSelectedBtn();
         modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        eraserBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+        smallBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
 
         //setup button listeners
         nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -409,6 +426,34 @@ public class GameActivity extends AppCompatActivity {
                 }
                 else {
                     modeBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                    inputMode = true;
+                }
+            }
+        });
+        smallBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClearSelectedBtn();
+                if(inputMode) {
+                    smallBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+                    inputMode = false;
+                }
+                else {
+                    smallBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
+                    inputMode = true;
+                }
+            }
+        });
+        eraserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClearSelectedBtn();
+                if(inputMode) {
+                    eraserBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOff));
+                    inputMode = false;
+                }
+                else {
+                    eraserBtn.setBackgroundColor(getResources().getColor(R.color.colorBtnOn));
                     inputMode = true;
                 }
             }

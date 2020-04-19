@@ -6,12 +6,27 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ExtremeActivity extends AppCompatActivity {
     Button puz1, puz2, puz3, puz4;
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extrememenu);
+
+        Toolbar toolbar = findViewById(R.id.gametoolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Super Sudoku");
 
         puz1 = (Button) findViewById(R.id.button);
         puz2 = (Button) findViewById(R.id.button2);
