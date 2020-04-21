@@ -2,23 +2,18 @@ package com.example.supersudoku;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.text.Layout;
-import android.view.DragEvent;
-import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.view.MotionEventCompat;
 
 public class GameActivity extends AppCompatActivity {
     //Interface variables
@@ -206,6 +201,24 @@ public class GameActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp(){
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_optionsmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == R.id.options) {
+            Intent intent = new Intent(GameActivity.this, OptionsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else
+            return onSupportNavigateUp();
     }
 
     @Override

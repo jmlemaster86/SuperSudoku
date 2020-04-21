@@ -1,17 +1,43 @@
 package com.example.supersudoku;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
-    Button preEasy, preMed, preHard, preExtreme, genEasy, genMed, genHard, genExtreme;
+    Button preEasy, preMed, preHard, preExtreme, genEasy, genMed, genHard, genExtreme, options;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_optionsmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == R.id.options) {
+            Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.gametoolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Super Sudoku");
+
         //initialize buttons here
         preEasy = (Button)findViewById(R.id.button);
         preMed = (Button)findViewById(R.id.button2);
