@@ -91,6 +91,18 @@ class Board{
 		else
 			return workingBoard[index].getActual();
 	}
+
+	public char getAnnotationValue(int index, int value){
+		if(workingBoard[index].getPos(value) == 0)
+			return ' ';
+		else
+			return (char)(workingBoard[index].getPos(value) + 48);
+	}
+
+	public void setAnnotationValue(int index, int value){
+	    if(workingBoard[index].getActual() > -1)
+		    workingBoard[index].setPos(value);
+	}
 	
 	//method to set the value of a cell.
 	public void setSquare(int index, int value){
