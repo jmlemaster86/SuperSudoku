@@ -14,5 +14,5 @@ The player is able to select any available cell and choose a number to place it 
 Selecting a cell and choosing the note option allows players to add a list of numbers they think possible for a given cell.
   While note is selected, all nine numbers can be added to a note. Removing note numbers is done by reselecting the desired
   number. Notes are covered but not erased when a number is added to the cell.
-Selecting the quick options allows players to choose a number followed by any cells they wish to add it to.
+Selecting the quick fill option allows players to choose a number followed by any cells they wish to add it to.
 If the chosen number for a cell causes a conflict, the row, column, or quadrent will highlight red.
