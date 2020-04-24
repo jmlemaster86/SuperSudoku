@@ -17,3 +17,4 @@ Selecting a cell and choosing the note option allows players to add a list of nu
 Selecting the quick fill option allows players to choose a number followed by any cells they wish to add it to.
 If the chosen number for a cell causes a conflict, the row, column, or quadrent will highlight red.
 The quick fill and annotation features can be used in conjunction.
+  Use a two touch pinch gesture to zoom in and out, when zoomed in you can use one finger to pan left/right and up/down.
