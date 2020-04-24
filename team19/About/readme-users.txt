@@ -16,3 +16,4 @@ Selecting a cell and choosing the note option allows players to add a list of nu
   number. Notes are covered but not erased when a number is added to the cell.
 Selecting the quick fill option allows players to choose a number followed by any cells they wish to add it to.
 If the chosen number for a cell causes a conflict, the row, column, or quadrent will highlight red.
+The quick fill and annotation features can be used in conjunction.
